@@ -16,6 +16,9 @@ MVP:
 2. Likes Schema 
     - contains values: 
         - user ID of profiles liked 
+        - one for the user liking a profile
+        - another for another user liking the profile
+        - two matching documents to show there is a correlation
         - Boolean: 
             - default to false 
             - becomes true if both users have liked each other
@@ -68,4 +71,4 @@ MVP:
 
 - Stretch Goal: 
     -  Update application to be responsive on mobile
-    - Google maps api -> location based user 
+    - Google maps api -> location based user (mapbox)
