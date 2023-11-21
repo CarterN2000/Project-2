@@ -1,0 +1,12 @@
+<%- include('../partials/header')%>
+
+<h1>Welcome to Developing Feelings! Go ahead and .find(yourNewLove)</h1>
+
+<%profile.forEach(function(p){%>
+
+<div><%= p.name %></div>
+<div><%= p.location %></div>
+
+<%})%>
+
+<%- include('../partials/footer')%>
