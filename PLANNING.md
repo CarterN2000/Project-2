@@ -47,7 +47,7 @@ MVP:
             - option to delete profile
 
     - Matches: (matches.ejs)
-        - takes you toa separate screen --> similar to index.ejs
+        - takes you to a separate screen --> similar to index.ejs
         - only populated with matches
         - delete a match 
             - includes chat schema 
