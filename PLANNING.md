@@ -1,7 +1,25 @@
 
 
-MVP: 
-------------------
+# Planning Materials
+
+## User Stories
+
+Trello: https://trello.com/b/Tnga23kV/project-2 
+
+## Wireframes
+
+![](/images/Customize%20Your%20Profile%20Wireframe.png)
+
+![](/images/Find%20a%20Match%20Wireframe.png)
+
+![](/images/User%20Details%20Wireframe.png)
+
+## ERD
+
+![](/images/Screen%20Shot%202023-11-21%20at%203.01.24%20PM.png)
+
+
+## Planning
 
 1.  Profile schema 
         - All profiles are created based on the default schema (new.ejs)
