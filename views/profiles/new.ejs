@@ -1,7 +1,53 @@
 <%- include('../partials/header')%>
 
 <h2>Make Your Profile</h2>
-
-
+<form action="/profiles" method="POST">
+    <div>Whats your name? <input type="text" name="name" required></div><br>
+    <div>What is your date of birth? <input type="date" name="birthday" required></div><br>
+    <div>Where are you from? <input type="text" name="location"></div><br>
+    <div>What is your current position? <input type="text" name="jobTitle"></div><br>
+    <div>What are your favorite programming languages? <br>
+        <select name="languages" multiple size="4">
+            <option name="C++">C++</option>
+            <option name="C#">C#</option>
+            <option name="Python">Python</option>
+            <option name="Javascript">Javascript</option>
+            <option name="Java">Java</option>
+            <option name="CSS">CSS</option>
+            <option name="HTML">HTML</option>
+            <option name="Rust">Rust</option>
+            <option name="PHP">PHP</option>
+            <option name="C">C</option>
+            <option name="Go">Go</option>
+            <option name="Scratch">Scratch</option>
+        </select>
+    </div><br>
+    <div>What are you looking for? 
+        <select name="desires">
+            <option name="Long-Term Relationship">Long-Term Relationship</option>
+            <option name="Short-Term Fun">Short-Term Fun</option>
+            <option name="Open-Relationship">Open-Relationship</option>
+            <option name="Undecided">Undecided</option>
+        </select>
+    </div><br>
+    <div>Tell us about yourself: <br>
+        <textarea name="aboutMe" cols="30" rows="10" maxlength="500" placeholder=" max-length 500 characters" required>
+        </textarea>
+    </div><br>
+    <div>Pronouns:
+        <select name="pronouns">
+            <option selected></option>
+            <option name="he/him">he/him</option>
+            <option name="she/her">she/her</option>
+            <option name="they/them">they/them</option>
+            <option name="other">other</option>
+            <option name="prefer not to say">prefer not to say</option>
+        </select>
+    </div><br>
+    <div>Show us your best photos!
+        <input type="image" required>
+    </div><br>
+    <div><button type="submit">Submit Pull Request</button></div>
+</form>
 
 <%- include('../partials/header')%>

@@ -6,6 +6,10 @@ const profileSchema = new Schema ({
         type: String,
         required: true,
     },
+    birthday: {
+        type: Date,
+        required: true,
+    },
     location: String,
     jobTitle: String,
     languages: {
@@ -25,7 +29,7 @@ const profileSchema = new Schema ({
         enum: ['', 'he/him', 'she/her', 'they/them', 'other', 'prefer not to say'],
     },
     images: {
-        type: Image,
+        type: String,
         min: 1,
         required: true
     },

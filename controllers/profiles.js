@@ -1,5 +1,3 @@
-const User = require('../models/user')
-
 const Profile = require('../models/profile')
 
 module.exports = {
@@ -25,9 +23,9 @@ async function index(req, res) {
     }
 }
 
-async function create(req, res) {
+function create(req, res) {
     try {
-        await Profile.create(req.body)
+        Profile.create(req.body)
         res.redirect('/profiles')
     }
     catch(err) {

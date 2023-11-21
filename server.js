@@ -8,7 +8,7 @@ require('dotenv').config();
 
 require('./config/database');
 
-const loginRouter = require('./routes/login');
+const indexRouter = require('./routes/login');
 const profilesRouter = require('./routes/profiles');
 
 const app = express();
@@ -23,13 +23,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', loginRouter);
+app.use('/', indexRouter);
 app.use('/profiles', profilesRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
+// app.use(function(req, res, next) {
+//   next(createError(404));
+// });
 
 // error handler
 app.use(function(err, req, res, next) {
