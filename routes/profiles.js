@@ -12,4 +12,6 @@ router.post('/', profilesCtrl.create)
 
 router.get('/:id', profilesCtrl.show)
 
+router.get('/edit', profilesCtrl.edit)
+
 module.exports = router;
