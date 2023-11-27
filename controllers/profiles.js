@@ -1,10 +1,12 @@
 const Profile = require('../models/profile')
 
 module.exports = {
-new: newUser,
-index,
-create,
-show, 
+    new: newUser,
+    index,
+    create,
+    show,
+    edit,
+
 }
 
 function newUser(req, res) {
@@ -18,7 +20,7 @@ async function index(req, res) {
             profile: allProfiles,
         })
     }
-    catch(err) {
+    catch (err) {
         console.log(err)
     }
 }
@@ -28,7 +30,7 @@ function create(req, res) {
         Profile.create(req.body)
         res.redirect('/profiles')
     }
-    catch(err) {
+    catch (err) {
         console.log(err)
     }
 }
@@ -40,7 +42,19 @@ async function show(req, res) {
             profile,
         })
     }
-    catch(err) {
+    catch (err) {
+        console.log(err)
+    }
+}
+
+async function edit(req, res) {
+    try {
+        const myProfile = await Profile.findById(req.params.id)
+        res.render('profiles/edit', {
+            profile: myProfile,
+        })
+    }
+    catch (err) {
         console.log(err)
     }
 }
