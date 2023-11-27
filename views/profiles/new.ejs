@@ -4,6 +4,13 @@
 <form action="/profiles" method="POST">
     <div>Whats your name? <input type="text" name="name" required></div><br>
     <div>What is your date of birth? <input type="date" name="birthday" required></div><br>
+    <div>What is your gender?
+        <select name="gender">
+            <option name="male">Male</option>
+            <option name="female">Female</option>
+            <option name="other">Other</option>
+        </select>
+    </div><br>
     <div>Where are you from? <input type="text" name="location"></div><br>
     <div>What is your current position? <input type="text" name="jobTitle"></div><br>
     <div>What are your favorite programming languages? <br>
@@ -31,8 +38,7 @@
         </select>
     </div><br>
     <div>Tell us about yourself: <br>
-        <textarea name="aboutMe" cols="30" rows="10" maxlength="500" placeholder=" max-length 500 characters" required>
-        </textarea>
+        <textarea name="aboutMe" cols="30" rows="10" maxlength="500" placeholder=" max-length 500 characters" required></textarea>
     </div><br>
     <div>Pronouns:
         <select name="pronouns">
