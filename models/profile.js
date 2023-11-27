@@ -31,7 +31,6 @@ const profileSchema = new Schema ({
     images: {
         type: String,
         min: 1,
-        required: true
     },
 })
 
