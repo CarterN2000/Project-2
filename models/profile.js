@@ -12,12 +12,12 @@ const profileSchema = new Schema ({
     },
     gender: {
         type: String,
-        enum: ['male', 'female', 'other']
+        enum: ['Male', 'Female', 'Other']
     },
     location: String,
     jobTitle: String,
     languages: {
-        type: String,
+        type: [String],
         enum: ['C++',  'C', 'C#', 'Python', 'Javascript', 'HTML', 'CSS', 'Java', 'Ruby', 'Go', 'PHP',],
     },
     desires: {
