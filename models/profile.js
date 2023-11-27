@@ -4,11 +4,11 @@ const Schema = mongoose.Schema
 const profileSchema = new Schema ({
     name: {
         type: String,
-        required: true,
+        // required: true,
     },
     birthday: {
         type: Date,
-        required: true,
+        // required: true,
     },
     gender: {
         type: String,
@@ -26,7 +26,7 @@ const profileSchema = new Schema ({
     },
     aboutMe: {
         type: String,
-        required: true
+        // required: true
     },
     pronouns: {
         type: String,

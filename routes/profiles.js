@@ -14,4 +14,6 @@ router.get('/:id', profilesCtrl.show)
 
 router.get('/edit', profilesCtrl.edit)
 
+router.put('/:id', profilesCtrl.update)
+
 module.exports = router;
