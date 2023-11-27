@@ -1,7 +1,25 @@
 
 
-MVP: 
-------------------
+# Planning Materials
+
+## User Stories
+
+Trello: https://trello.com/b/Tnga23kV/project-2 
+
+## Wireframes
+
+![](/images/Customize%20Your%20Profile%20Wireframe.png)
+
+![](/images/Find%20a%20Match%20Wireframe.png)
+
+![](/images/User%20Details%20Wireframe.png)
+
+## ERD
+
+![](/images/Screen%20Shot%202023-11-21%20at%203.01.24%20PM.png)
+
+
+## Planning
 
 1.  Profile schema 
         - All profiles are created based on the default schema (new.ejs)
@@ -16,6 +34,9 @@ MVP:
 2. Likes Schema 
     - contains values: 
         - user ID of profiles liked 
+        - one for the user liking a profile
+        - another for another user liking the profile
+        - two matching documents to show there is a correlation
         - Boolean: 
             - default to false 
             - becomes true if both users have liked each other
@@ -68,4 +89,4 @@ MVP:
 
 - Stretch Goal: 
     -  Update application to be responsive on mobile
-    - Google maps api -> location based user 
+    - Google maps api -> location based user (mapbox)

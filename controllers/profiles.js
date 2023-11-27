@@ -38,8 +38,10 @@ function create(req, res) {
 async function show(req, res) {
     try {
         const profile = await Profile.findById(req.params.id)
+        const age = calculateAge(profile.birthday)
         res.render('profiles/show', {
             profile,
+            age,
         })
     }
     catch (err) {
@@ -57,4 +59,24 @@ async function edit(req, res) {
     catch (err) {
         console.log(err)
     }
+}
+
+function calculateAge(birthDate) {
+    const currentDate = new Date();
+    const birthYear = birthDate.getFullYear();
+    const currentYear = currentDate.getFullYear();
+
+    let age = currentYear - birthYear;
+
+    // Adjust age if the birthday hasn't occurred yet this year
+    const birthMonth = birthDate.getMonth();
+    const currentMonth = currentDate.getMonth();
+    const birthDay = birthDate.getDate();
+    const currentDay = currentDate.getDate();
+
+    if (currentMonth < birthMonth || (currentMonth === birthMonth && currentDay < birthDay)) {
+        age--
+    }
+
+    return age;
 }
