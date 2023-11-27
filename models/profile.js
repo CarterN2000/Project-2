@@ -10,6 +10,10 @@ const profileSchema = new Schema ({
         type: Date,
         required: true,
     },
+    gender: {
+        type: String,
+        enum: ['male', 'female', 'other']
+    },
     location: String,
     jobTitle: String,
     languages: {
