@@ -6,6 +6,7 @@ module.exports = {
     create,
     show,
     edit,
+    age: calculateAge
 }
 
 function newUser(req, res) {
