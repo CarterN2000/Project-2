@@ -6,7 +6,6 @@ module.exports = {
     create,
     show,
     edit,
-
 }
 
 function newUser(req, res) {

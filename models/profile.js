@@ -8,7 +8,7 @@ const profileSchema = new Schema ({
     },
     birthday: {
         type: Date,
-        required: true,
+        required: true
     },
     gender: {
         type: String,
