@@ -9,8 +9,15 @@ const userSchema = new Schema({
   },
   email: String,
   avatar: String,
+
+  profile: {
+    type: Schema.Types.ObjectId,
+    ref: 'Profile'
+  },
  }, { timestamps: true
 });
 
 
-module.exports = mongoose.model('User', userSchema);
+const User = mongoose.model('User', userSchema);
+module.exports = User
+

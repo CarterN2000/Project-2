@@ -4,8 +4,9 @@
 
 <%profile.forEach(function(p){%>
 
-<div><%= p.images %></div>
-<div><a href="/profiles/<%= p._id %>"><%= p.name%>, <%= p.birthday %></a></div>
+<img src="<%=p.images%>" alt="Profile Image" />
+<div><a href="/profiles/<%= p._id %>"><%= p.name%></a></div>
+
 <div><%= p.location %></div>
 
 

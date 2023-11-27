@@ -6,11 +6,15 @@ module.exports = {
     create,
     show,
     edit,
-    age: calculateAge
+    update,
 }
 
 function newUser(req, res) {
-    res.render('profiles/new')
+    console.log(req.user)
+    const user = req.user
+    res.render('profiles/new', {
+        user,
+    })
 }
 
 async function index(req, res) {
@@ -38,7 +42,10 @@ function create(req, res) {
 async function show(req, res) {
     try {
         const profile = await Profile.findById(req.params.id)
-        const age = calculateAge(profile.birthday)
+        let age = 0
+        if (profile.birthday) {
+           age = calculateAge(profile.birthday)
+        }
         res.render('profiles/show', {
             profile,
             age,
@@ -59,6 +66,12 @@ async function edit(req, res) {
     catch (err) {
         console.log(err)
     }
+}
+
+async function update(req, res) {
+    console.log(req.params.id)
+    await Profile.findByIdAndUpdate(req.params.id, req.body, {new: true})
+    res.redirect('/profiles')
 }
 
 function calculateAge(birthDate) {

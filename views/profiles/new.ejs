@@ -1,8 +1,8 @@
 <%- include('../partials/header')%>
 
 <h2>Make Your Profile</h2>
-<form action="/profiles" method="POST">
-    <div>Whats your name? <input type="text" name="name" required></div><br>
+<form action="/profiles/<%= user.profile %>?_method=PUT" method="POST">
+    <div>Whats your name? <input type="text" name="name" value="<%= user.name %>" required></div><br>
     <div>What is your date of birth? <input type="date" name="birthday" required></div><br>
     <div>What is your gender?
         <select name="gender">
