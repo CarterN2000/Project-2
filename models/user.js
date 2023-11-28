@@ -9,6 +9,7 @@ const userSchema = new Schema({
   },
   email: String,
   avatar: String,
+
   profile: {
     type: Schema.Types.ObjectId,
     ref: 'Profile'
@@ -19,3 +20,4 @@ const userSchema = new Schema({
 
 const User = mongoose.model('User', userSchema);
 module.exports = User
+

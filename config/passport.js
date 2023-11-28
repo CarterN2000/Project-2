@@ -1,8 +1,11 @@
 const passport = require('passport')
 
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+
 const User = require('../models/user')
 const Profile = require('../models/profile')
+
+
 passport.use(new GoogleStrategy(
     // Configuration object
     {
@@ -19,6 +22,7 @@ passport.use(new GoogleStrategy(
         let user = await User.findOne({ googleId: profile.id });
         // Existing user found, so provide it to passport
         if (user) return cb(null, user);
+
         const userProfile = new Profile({
           name: profile.displayName,
           images: profile.photos[0].value
@@ -35,6 +39,7 @@ passport.use(new GoogleStrategy(
         await newUser.save()
 
         return cb(null, newUser);
+
       } catch (err) {
         return cb(err);
       }

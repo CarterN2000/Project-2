@@ -1,12 +1,17 @@
 <%- include('../partials/header')%>
 
-<h1>Meet <%=profile.name%>, <%= age%></h1>
+<h1>Meet <%=profile.name%></h1>
+<form action="/profiles" method="POST">
+    <div><%= profile.birthday %></div>
+    <div>Lives In: <%= profile.location %></div>
+    <div>Looking for: <%= profile.desires %></div>
+    <div>About: <%= profile.aboutMe %></div>
+    <div>Preferred Languages: <%= profile.languages %></div>
+    <div>Job Title: <%= profile.jobTitle %></div>
 
-
-<div><%= profile.location %></div>
-<div><%= profile.desires %></div>
-<div><%= profile.aboutMe %></div>
-<div><%= profile.languages %></div>
+    <button type="submit">YES</button>
+    <button type="submit">NO</button>
+</form>
 
 
 <%- include('../partials/footer')%>
