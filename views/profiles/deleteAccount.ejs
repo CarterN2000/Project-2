@@ -1,0 +1,12 @@
+<%- include('../partials/header')%>
+
+<h1>Are you sure? We'd hate to see you go!</h1>
+
+<div>
+    <form action="../../profiles/me/delete?_method=DELETE" method="POST">   
+        <button type="submit">DESTROY</button>
+    </form>
+    <a href="../../profiles/me">jk I change my mind</a>
+</div>
+
+<%- include('../partials/footer')%>

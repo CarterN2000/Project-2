@@ -22,5 +22,9 @@ router.put('/me', ensureLoggedIn, profilesCtrl.update)
 
 router.put('/:id', ensureLoggedIn, profilesCtrl.addLike)
 
+router.get('/me/delete', ensureLoggedIn, profilesCtrl.deletePage)
+
+router.delete('/me/delete', ensureLoggedIn, profilesCtrl.destroy)
+
 module.exports = router;
 

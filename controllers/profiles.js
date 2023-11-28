@@ -11,10 +11,12 @@ module.exports = {
     showMe,
     checkNewUser,
     addLike,
+    deletePage, 
+    destroy, 
+
 }
 
 function newUser(req, res) {
-    console.log(req.user)
     const user = req.user
     res.render('profiles/new', {
         user,
@@ -104,6 +106,30 @@ async function addLike(req, res) {
     catch(err) {
         console.log(err)
     }
+}
+
+async function deletePage(req, res) {
+    try {
+        const profileToDelete = await Profile.findById(req.user.profile)
+        res.render('profiles/deleteAccount', {
+            profile: profileToDelete,
+        })
+    }
+    catch(err) {
+        console.log(err)
+    }
+}
+
+async function destroy(req, res) {
+    const userBeGone = await User.deleteOne(req.user._id)
+    const profileBeGone = await Profile.deleteOne(req.user.profile)
+    res.redirect('/')
+    // if (!userBeGone && !profileBeGone) {
+    //     res.redirect('/')
+    // }
+    // else {
+    //     console.log('PROFILE DELETION ERROR')
+    // }
 }
 
 function calculateAge(birthDate) {
