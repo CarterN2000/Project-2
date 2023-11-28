@@ -8,9 +8,9 @@ const profilesCtrl = require('../controllers/profiles')
 /* GET users listing. */
 router.get('/me', ensureLoggedIn, profilesCtrl.showMe)
 
-router.get('/new', ensureLoggedIn, profilesCtrl.new)
+router.get('/new', profilesCtrl.new)
 
-router.get('/', profilesCtrl.index)
+router.get('/', profilesCtrl.checkNewUser, profilesCtrl.index)
 
 router.post('/', ensureLoggedIn, profilesCtrl.create)
 
