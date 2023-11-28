@@ -10,7 +10,8 @@ router.get('/me', ensureLoggedIn, profilesCtrl.showMe)
 
 router.get('/new', ensureLoggedIn, profilesCtrl.new)
 
-router.get('/', profilesCtrl.index)
+router.get('/', ensureLoggedIn, profilesCtrl.index)
+// function, does this user have a profile, associated with a user?
 
 router.post('/', ensureLoggedIn, profilesCtrl.create)
 
