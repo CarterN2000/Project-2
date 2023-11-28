@@ -7,6 +7,7 @@ module.exports = {
     show,
     edit,
     update,
+    showMe,
 }
 
 function newUser(req, res) {
@@ -73,6 +74,17 @@ async function update(req, res) {
     await Profile.findByIdAndUpdate(req.params.id, req.body, {new: true})
     res.redirect('/profiles')
 }
+
+async function showMe(req, res) {
+    console.log(req.user)
+    const userProfile = await Profile.findById(req.user.profile)
+    res.render('profiles/myProfile', {
+        profile: userProfile
+    })
+}
+
+
+
 
 function calculateAge(birthDate) {
     const currentDate = new Date();
