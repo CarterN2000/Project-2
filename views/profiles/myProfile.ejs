@@ -35,7 +35,7 @@
           <h1>Nice profile, <%= profile.name %>!</h1>
           <h3>Your Stats are below:</h3>
             <div id="userGrid">
-                <div><%= profile.birthday %></div>
+                <div><%= profile.birthday.toLocaleDateString('en-US') %></div>
                 <div>Lives In: <%= profile.location %></div>
                 <div>Looking for: <%= profile.desires %></div>
                 <div>About: <%= profile.aboutMe %></div>
@@ -46,6 +46,7 @@
                         <p>EDIT PROFILE </p>
                     </a>
                 <!-- </button> -->
+                <a href="profiles/me/delete">SAY GOODBYE</a>
             </div>
         </div>
     </div>
