@@ -14,6 +14,7 @@ const userSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'Profile'
   },
+  newUser: Boolean,
  }, { timestamps: true
 });
 
