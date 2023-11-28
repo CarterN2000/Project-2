@@ -76,7 +76,6 @@ async function update(req, res) {
 }
 
 async function showMe(req, res) {
-    console.log(req.user)
     const userProfile = await Profile.findById(req.user.profile)
     res.render('profiles/myProfile', {
         profile: userProfile
