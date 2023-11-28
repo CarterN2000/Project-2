@@ -18,7 +18,9 @@ router.get('/:id', profilesCtrl.show)
 
 router.get('/me/edit', ensureLoggedIn, profilesCtrl.edit)
 
-router.put('/:id', ensureLoggedIn, profilesCtrl.update)
+router.put('/me', ensureLoggedIn, profilesCtrl.update)
+
+router.put('/:id', ensureLoggedIn, profilesCtrl.addLike)
 
 module.exports = router;
 

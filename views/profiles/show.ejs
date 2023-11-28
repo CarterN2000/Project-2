@@ -1,16 +1,14 @@
 <%- include('../partials/header')%>
 
 <h1>Meet <%=profile.name%>, <%=age%> </h1>
-<form action="/profiles" method="GET">
+
     <div>Lives In: <%= profile.location %></div>
     <div>Looking for: <%= profile.desires %></div>
     <div>About: <%= profile.aboutMe %></div>
     <div>Preferred Languages: <%= profile.languages %></div>
     <div>Job Title: <%= profile.jobTitle %></div>
-
+<form action="/profiles/<%= profile._id %>?_method=PUT" method="POST">
     <button type="submit">YES</button>
     <button type="submit">NO</button>
 </form>
-
-
 <%- include('../partials/footer')%>

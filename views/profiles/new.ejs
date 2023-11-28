@@ -1,61 +1,5 @@
 <%- include('../partials/header')%>
 
-<!-- <h2>Make Your Profile</h2> -->
-<!-- <form action="/profiles/<#= user.profile %>?_method=PUT" method="POST">
-    <div>Whats your name? <input type="text" name="name" value="<#= user.name %>" required></div><br>
-    <div>What is your date of birth? <input type="date" name="birthday" required></div><br>
-    <div>What is your gender?
-        <select name="gender">
-            <option name="male">Male</option>
-            <option name="female">Female</option>
-            <option name="other">Other</option>
-        </select>
-    </div><br>
-    <div>Where are you from? <input type="text" name="location"></div><br>
-    <div>What is your current position? <input type="text" name="jobTitle"></div><br>
-    <div>What are your favorite programming languages? <br>
-        <select name="languages" multiple size="4">
-            <option name="C++">C++</option>
-            <option name="C#">C#</option>
-            <option name="Python">Python</option>
-            <option name="Javascript">Javascript</option>
-            <option name="Java">Java</option>
-            <option name="CSS">CSS</option>
-            <option name="HTML">HTML</option>
-            <option name="Rust">Rust</option>
-            <option name="PHP">PHP</option>
-            <option name="C">C</option>
-            <option name="Go">Go</option>
-            <option name="Scratch">Scratch</option>
-        </select>
-    </div><br>
-    <div>What are you looking for? 
-        <select name="desires">
-            <option name="Long-Term Relationship">Long-Term Relationship</option>
-            <option name="Short-Term Fun">Short-Term Fun</option>
-            <option name="Open-Relationship">Open-Relationship</option>
-            <option name="Undecided">Undecided</option>
-        </select>
-    </div><br>
-    <div>Tell us about yourself: <br>
-        <textarea name="aboutMe" cols="30" rows="10" maxlength="500" placeholder=" max-length 500 characters" required></textarea>
-    </div><br>
-    <div>Pronouns:
-        <select name="pronouns">
-            <option selected></option>
-            <option name="he/him">he/him</option>
-            <option name="she/her">she/her</option>
-            <option name="they/them">they/them</option>
-            <option name="other">other</option>
-            <option name="prefer not to say">prefer not to say</option>
-        </select>
-    </div><br>
-    <div>Show us your best photos!
-        <input type="image">
-    </div><br>
-    <div><button type="submit">Submit Pull Request</button></div>
-</form> -->
-
 <div class="header">
     <div id="welcome">
       <pre id="headerText">welcome.md       X  </pre>
@@ -68,18 +12,10 @@
   
   <div class="main">
     <div id="profileGrid">
-    <!-- <div id="userContent">
-        <p id="uploadImg">To upload an image, create a free profile on Imgur and upload an image there. Then you can copy and past the URL link to the image in the box below. 
-        </p>
-        <input id="imageUrl"/> -->
-        <!-- <div id="userDisplay">
-          <div id="userName">Your Name</div> |
-          <div id="userPronouns">Pronouns</div>|
-          <div id="userJob"> Job Title</div> 
-        </div> -->
-    <!-- </div> -->
+
     <div id="userDetails"> <h2>Your Profile</h2>
-            <form id="userForm" action="/profiles/<%=user.profile%>?_method=PUT" method="POST">
+
+            <form id="userForm" action="/profiles/me?_method=PUT" method="POST">
                 <div id="userName">Whats your name? <input type="text" name="name" required></div><br>
                 <div id="userDob">What is your date of birth? <input type="date" name="birthday" required></div><br>
                 <div id="userLoc">Where are you from? <input type="text" name="location"></div><br>
@@ -109,8 +45,7 @@
                     </select>
                 </div><br>
                 <div id="about">Tell us about yourself: <br>
-                    <textarea name="aboutMe" cols="30" rows="10" maxlength="500" placeholder=" max-length 500 characters" required>
-                    </textarea>
+                    <textarea name="aboutMe" cols="30" rows="10" maxlength="500" placeholder=" max-length 500 characters" required></textarea>
                 </div><br>
                 <div id="pronouns">Pronouns:
                     <select name="pronouns">
@@ -122,9 +57,7 @@
                         <option name="prefer not to say">prefer not to say</option>
                     </select>
                 </div><br>
-                <!-- <div id="userPhotos">Show us your best photos!
-                    <input type="image">
-                </div><br> -->
+             
                 <div id="uploadImg">
                     <p id="uploadText">To upload an image, create a free profile on Imgur 
                         and upload an image there. Then copy and past the URL link 
@@ -133,7 +66,9 @@
                     <input id="imageUrl"/>
                 </div>
           
-                <div id="submitBttn"><button type="submit">Create Profile</button></div>
+                <div id="submitBttn">
+                    <button type="submit">Create Profile</button>
+                </div>
             </form>
        </div>
     </div>
