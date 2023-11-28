@@ -1,62 +1,91 @@
 <%- include('../partials/header')%>
 
-<h1>Edit Profile</h1>
 
-<div>Name: <%= profile.name%></div><br>
-<div>Birthday: <%= profile.birthday.toLocaleDateString('en-US')%></div><br>
+<div class="header">
+    <div id="welcome">
+      <pre id="headerText">welcome.md       X  </pre>
+    </div>
     
-<!-- Need a 'user-profile' page where we can edit info -->
-<form action="/profiles/<%= user.profile %>?_method=PUT" method="POST">
-    <div>Gender: 
-        <select name="gender">
-            <option name="male">Male</option>
-            <option name="female">Female</option>
-            <option name="other">Other</option>
-        </select>
-    </div><br>
-    <div>Located in: <input type="text" name="location" value="<%= profile.location%>"></div><br>
-    <div>What is your current position? <input type="text" name="jobTitle" value="<%= profile.jobTitle%>"></div><br>
-    <div>What are your favorite programming languages? <br>
-        <select name="languages" multiple size="4">
-            <option name="C++">C++</option>
-            <option name="C#">C#</option>
-            <option name="Python">Python</option>
-            <option name="Javascript">Javascript</option>
-            <option name="Java">Java</option>
-            <option name="CSS">CSS</option>
-            <option name="HTML">HTML</option>
-            <option name="Rust">Rust</option>
-            <option name="PHP">PHP</option>
-            <option name="C">C</option>
-            <option name="Go">Go</option>
-            <option name="Scratch">Scratch</option>
-        </select>
-    </div><br>
-    <div>What are you looking for? 
-        <select name="desires" value="<%= profile.desires%>">
-            <option name="Long-Term Relationship">Long-Term Relationship</option>
-            <option name="Short-Term Fun">Short-Term Fun</option>
-            <option name="Open-Relationship">Open-Relationship</option>
-            <option name="Undecided">Undecided</option>
-        </select>
-    </div><br>
-    <div>Tell us about yourself: <br>
-        <textarea name="aboutMe" value="<%= profile.aboutMe%>" cols="30" rows="10" maxlength="500" placeholder=" max-length 500 characters" required></textarea>
-    </div><br>
-    <div>Pronouns:
-        <select name="pronouns" value="<%= profile.pronouns%>">
-            <option selected></option>
-            <option name="he/him">he/him</option>
-            <option name="she/her">she/her</option>
-            <option name="they/them">they/them</option>
-            <option name="other">other</option>
-            <option name="prefer not to say">prefer not to say</option>
-        </select>
-    </div><br>
-    <div>Photos
-        <input type="image">
-    </div><br>
-    <div><button type="submit">Update Profile</button></div>
-</form>
+    <div id="userProfile">
+      <pre id="headerText">  Edit-Your-Profile.md   X  </pre>
+    </div>
+  </div>
+  
+  <div class="main">
+        <div id="profileGrid">
+            <div id="userContent" style="background-image: url(<%=profile.images%>); 
+                                    background-repeat: no-repeat; 
+                                    background-size: cover;">
+                <div id="userDisplay">
+                    <div id="userName"><%=profile.name%></div> |
+                    <div id="userPronouns"><%= profile.pronouns %></div> |
+                    <div id="userJob"> <%= profile.jobTitle %></div> 
+                </div>
+            </div>
+        <div id="userDetails">
+            <h1>Edit Profile</h1>
+            <div>Name: <%= profile.name%></div><br>
+            <div>Birthday: <%= profile.birthday.toLocaleDateString('en-US')%></div><br>
+                
+            <!-- Need a 'user-profile' page where we can edit info -->
+            <form action="/profiles/<%= user.profile %>?_method=PUT" method="POST" id="userForm">
+                <div>Gender: 
+                    <select name="gender">
+                        <option name="male">Male</option>
+                        <option name="female">Female</option>
+                        <option name="other">Other</option>
+                    </select>
+                </div><br>
+                <div id="userLoc">Located in: <input type="text" name="location" value="<%= profile.location%>"></div><br>
+                <div id="userJob">What is your current position? <input type="text" name="jobTitle" value="<%= profile.jobTitle%>"></div><br>
+                <div id="userLang">What are your favorite programming languages? <br>
+                    <select name="languages" multiple size="4">
+                        <option name="C++">C++</option>
+                        <option name="C#">C#</option>
+                        <option name="Python">Python</option>
+                        <option name="Javascript">Javascript</option>
+                        <option name="Java">Java</option>
+                        <option name="CSS">CSS</option>
+                        <option name="HTML">HTML</option>
+                        <option name="Rust">Rust</option>
+                        <option name="PHP">PHP</option>
+                        <option name="C">C</option>
+                        <option name="Go">Go</option>
+                        <option name="Scratch">Scratch</option>
+                    </select>
+                </div><br>
+                <div  id="userDes">What are you looking for? 
+                    <select name="desires" value="<%= profile.desires%>">
+                        <option name="Long-Term Relationship">Long-Term Relationship</option>
+                        <option name="Short-Term Fun">Short-Term Fun</option>
+                        <option name="Open-Relationship">Open-Relationship</option>
+                        <option name="Undecided">Undecided</option>
+                    </select>
+                </div><br>
+                <div id="about">Tell us about yourself: <br>
+                    <textarea name="aboutMe" value="<%= profile.aboutMe%>" cols="30" rows="10" maxlength="500" placeholder=" max-length 500 characters" required></textarea>
+                </div><br>
+                <div id="pronouns">Pronouns:
+                    <select name="pronouns" value="<%= profile.pronouns%>">
+                        <option selected></option>
+                        <option name="he/him">he/him</option>
+                        <option name="she/her">she/her</option>
+                        <option name="they/them">they/them</option>
+                        <option name="other">other</option>
+                        <option name="prefer not to say">prefer not to say</option>
+                    </select>
+                </div>
+                <div id="uploadImg">
+                    <p id="uploadText">To upload an image, create a free profile on Imgur 
+                        and upload an image there. Then copy and past the URL link 
+                        to the image in the box below. 
+                    </p>
+                    <input id="imageUrl"/>
+                </div>
+                <div><button type="submit" class="bttn">Update Profile</button></div>
+            </form>
+        </div>
+    </div>
+</div>
 
 <%- include('../partials/footer')%>
