@@ -36,9 +36,8 @@
             </div>
         </div>
         <div id="userDetails">  
-        <h1><%=profile.name%>'s Profile</h1>
-            <form id="userForm" action="/profiles" method="GET">
-                <div><%= profile.birthday %></div>
+        <h1><%=profile.name%>, <%= age %></h1>
+            <form id="userForm" action="/profiles/<%= profile._id %>?_method=PUT" method="POST">
                 <div>Lives In: <%= profile.location %></div>
                 <div>Looking for: <%= profile.desires %></div>
                 <div>About: <%= profile.aboutMe %></div>
