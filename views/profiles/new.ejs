@@ -14,7 +14,7 @@
     <div id="profileGrid">
 
     <div id="userDetails"> <h2>Your Profile</h2>
-            <form id="userForm" action="/profiles/<%=user.profile%>?_method=PUT" method="POST">
+            <form id="userForm" action="/profiles/me?_method=PUT" method="POST">
                 <div id="userName">Whats your name? <input type="text" name="name" required></div><br>
                 <div id="userDob">What is your date of birth? <input type="date" name="birthday" required></div><br>
                 <div id="userLoc">Where are you from? <input type="text" name="location"></div><br>
@@ -44,8 +44,7 @@
                     </select>
                 </div><br>
                 <div id="about">Tell us about yourself: <br>
-                    <textarea name="aboutMe" cols="30" rows="10" maxlength="500" placeholder=" max-length 500 characters" required>
-                    </textarea>
+                    <textarea name="aboutMe" cols="30" rows="10" maxlength="500" placeholder=" max-length 500 characters" required></textarea>
                 </div><br>
                 <div id="pronouns">Pronouns:
                     <select name="pronouns">

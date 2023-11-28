@@ -10,6 +10,7 @@ module.exports = {
     update,
     showMe,
     checkNewUser,
+    addLike,
 }
 
 function newUser(req, res) {
@@ -82,6 +83,27 @@ async function showMe(req, res) {
     res.render('profiles/myProfile', {
         profile: userProfile
     })
+}
+
+async function addLike(req, res) {
+    try {
+        const userProfile = await Profile.findById(req.user.profile)
+        const likedProfile = await Profile.findById(req.params.id)
+
+        userProfile.likedProfiles.push(likedProfile._id)
+
+        await userProfile.save()
+
+        console.log('saved user')
+
+        if (likedProfile.likedProfiles.includes(userProfile._id)) {
+            console.log('wooohoooo')
+        }
+        res.redirect('/profiles')
+    }
+    catch(err) {
+        console.log(err)
+    }
 }
 
 function calculateAge(birthDate) {
