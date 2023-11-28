@@ -6,6 +6,9 @@
     <div id="welcome">
       <pre id="headerText">welcome.md       X  </pre>
     </div>
+    <div id="userProfile">
+        <pre id="headerText">  Find-A-Match.JS   X  </pre>
+      </div>
 </div>
 
 <div class="main">
@@ -28,12 +31,12 @@
   
 
 <%profile.forEach(function(p){%>
+<div>
+    <img src="<%=p.images%>" alt="Profile Image" />
+    <div><a href="/profiles/<%= p._id %>"><%= p.name%></a></div>
 
-<img src="<%=p.images%>" alt="Profile Image" />
-<div><a href="/profiles/<%= p._id %>"><%= p.name%></a></div>
-
-<div><%= p.location %></div>
-
+    <div><%= p.location %></div>
+</div>
 
 <%})%>
 
