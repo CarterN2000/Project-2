@@ -2,18 +2,18 @@
 
 <h1>Edit Profile</h1>
 
-<div>Name:<%= profile.name%></div><br>
-<div>Birthday: <%= profile.birthday%>"</div><br>
+<div>Name: <%= profile.name%></div><br>
+<div>Birthday: <%= profile.birthday.toLocaleDateString('en-US')%></div><br>
     
 <!-- Need a 'user-profile' page where we can edit info -->
-<form action="/profiles" method="POST">
+<form action="/profiles/<%= user.profile %>?_method=PUT" method="POST">
     <div>Gender: 
         <select name="gender">
             <option name="male">Male</option>
             <option name="female">Female</option>
             <option name="other">Other</option>
         </select>
-    </div>
+    </div><br>
     <div>Located in: <input type="text" name="location" value="<%= profile.location%>"></div><br>
     <div>What is your current position? <input type="text" name="jobTitle" value="<%= profile.jobTitle%>"></div><br>
     <div>What are your favorite programming languages? <br>
@@ -41,8 +41,7 @@
         </select>
     </div><br>
     <div>Tell us about yourself: <br>
-        <textarea name="aboutMe" value="<%= profile.aboutMe%>" cols="30" rows="10" maxlength="500" placeholder=" max-length 500 characters" required>
-        </textarea>
+        <textarea name="aboutMe" value="<%= profile.aboutMe%>" cols="30" rows="10" maxlength="500" placeholder=" max-length 500 characters" required></textarea>
     </div><br>
     <div>Pronouns:
         <select name="pronouns" value="<%= profile.pronouns%>">
