@@ -38,6 +38,10 @@ const profileSchema = new Schema ({
         type: String,
         min: 1,
     },
+    likedProfiles: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Profile',
+      }],
 })
 
 const Profile = mongoose.model('Profile', profileSchema)
