@@ -59,7 +59,7 @@ async function show(req, res) {
 
 async function edit(req, res) {
     try {
-        const myProfile = await Profile.findById(req.params.id)
+        const myProfile = await Profile.findById(req.user.profile)
         res.render('profiles/edit', {
             profile: myProfile,
         })
@@ -70,9 +70,8 @@ async function edit(req, res) {
 }
 
 async function update(req, res) {
-    console.log(req.params.id)
-    await Profile.findByIdAndUpdate(req.params.id, req.body, {new: true})
-    res.redirect('/profiles')
+    await Profile.findByIdAndUpdate(req.user.profile, req.body, {new: true})
+    res.redirect('/profiles/me')
 }
 
 async function showMe(req, res) {

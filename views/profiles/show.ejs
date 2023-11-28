@@ -1,8 +1,7 @@
 <%- include('../partials/header')%>
 
-<h1>Meet <%=profile.name%></h1>
-<form action="/profiles" method="POST">
-    <div><%= profile.birthday %></div>
+<h1>Meet <%=profile.name%>, <%=age%> </h1>
+<form action="/profiles" method="GET">
     <div>Lives In: <%= profile.location %></div>
     <div>Looking for: <%= profile.desires %></div>
     <div>About: <%= profile.aboutMe %></div>
