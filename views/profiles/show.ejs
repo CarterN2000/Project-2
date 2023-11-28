@@ -1,14 +1,56 @@
 <%- include('../partials/header')%>
 
-<h1>Meet <%=profile.name%>, <%=age%> </h1>
+<!-- <h1>Meet <#=profile.name%>, <#=age%> </h1> -->
 
-    <div>Lives In: <%= profile.location %></div>
-    <div>Looking for: <%= profile.desires %></div>
-    <div>About: <%= profile.aboutMe %></div>
-    <div>Preferred Languages: <%= profile.languages %></div>
-    <div>Job Title: <%= profile.jobTitle %></div>
-<form action="/profiles/<%= profile._id %>?_method=PUT" method="POST">
+<!-- <form action="/profiles" method="GET">
+    <div>Lives In: <#= profile.location %></div>
+    <div>Looking for: <#= profile.desires %></div>
+    <div>About: <#= profile.aboutMe %></div>
+    <div>Preferred Languages: <#= profile.languages %></div>
+    <div>Job Title: <#= profile.jobTitle %></div>
+
     <button type="submit">YES</button>
     <button type="submit">NO</button>
-</form>
+</form> -->
+
+
+<div class="header">
+    <div id="welcome">
+      <pre id="headerText">welcome.md       X  </pre>
+    </div>
+    
+    <div id="userProfile">
+      <pre id="headerText">  User-Profile.md   X  </pre>
+    </div>
+  </div>
+  
+  <div class="main">
+    <div id="profileGrid">
+        <div id="userContent" style="background-image: url(<%=profile.images%>); 
+                                     background-repeat: no-repeat; 
+                                     background-size: cover;">
+            <div id="userDisplay">
+            <div id="userName"><%=profile.name%></div> |
+            <div id="userPronouns"><%= profile.pronouns %></div> |
+            <div id="userJob"> <%= profile.jobTitle %></div> 
+            </div>
+        </div>
+        <div id="userDetails">  
+        <h1><%=profile.name%>'s Profile</h1>
+            <form id="userForm" action="/profiles" method="GET">
+                <div><%= profile.birthday %></div>
+                <div>Lives In: <%= profile.location %></div>
+                <div>Looking for: <%= profile.desires %></div>
+                <div>About: <%= profile.aboutMe %></div>
+                <div>Preferred Languages: <%= profile.languages %></div>
+                <div>Job Title: <%= profile.jobTitle %></div>
+                <button class="bttn" type="submit">LIKE</button>
+                <button id="dislikeBttn" type="submit">DISLIKE</button>
+                <div id="likeInfo">*If you and <%=profile.name%> like each other you can continue the conversation in a private chat room!
+                </div>
+            </form>
+        </div>
+    </div>
+  </div>
+  
 <%- include('../partials/footer')%>
