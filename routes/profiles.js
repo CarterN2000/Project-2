@@ -8,10 +8,9 @@ const profilesCtrl = require('../controllers/profiles')
 /* GET users listing. */
 router.get('/me', ensureLoggedIn, profilesCtrl.showMe)
 
-router.get('/new', ensureLoggedIn, profilesCtrl.new)
+router.get('/new', profilesCtrl.new)
 
-router.get('/', ensureLoggedIn, profilesCtrl.index)
-// function, does this user have a profile, associated with a user?
+router.get('/', profilesCtrl.checkNewUser, profilesCtrl.index)
 
 router.post('/', ensureLoggedIn, profilesCtrl.create)
 

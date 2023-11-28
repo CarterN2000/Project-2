@@ -1,4 +1,5 @@
 const Profile = require('../models/profile')
+const User = require('../models/user')
 
 module.exports = {
     new: newUser,
@@ -8,6 +9,7 @@ module.exports = {
     edit,
     update,
     showMe,
+    checkNewUser,
 }
 
 function newUser(req, res) {
@@ -71,6 +73,7 @@ async function edit(req, res) {
 
 async function update(req, res) {
     await Profile.findByIdAndUpdate(req.user.profile, req.body, {new: true})
+    await User.findByIdAndUpdate(req.user._id, {newUser: false})
     res.redirect('/profiles/me')
 }
 
@@ -80,9 +83,6 @@ async function showMe(req, res) {
         profile: userProfile
     })
 }
-
-
-
 
 function calculateAge(birthDate) {
     const currentDate = new Date();
@@ -102,4 +102,15 @@ function calculateAge(birthDate) {
     }
 
     return age;
+}
+
+function checkNewUser(req, res, next) {
+    const { user } = req
+
+    if(user && user.newUser) {
+        res.redirect('profiles/new')
+    }
+    else {
+        next()
+    }
 }
