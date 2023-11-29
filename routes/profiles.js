@@ -36,6 +36,5 @@ router.delete('/me/delete', ensureLoggedIn, profilesCtrl.destroy)
 router.post('/:id/photos/single', upload.single("imageUpload"), profilesCtrl.imageUpload)
 
 
-
 module.exports = router;
 

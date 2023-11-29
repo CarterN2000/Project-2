@@ -1,10 +1,10 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-
-const imageSchema = new mongoose.Schema({
+const imageSchema = new Schema ({
     url: {type: String, required: true},
-    alt: {type: String, default:""} 
+    description: { type: String},
+    alt: {type: String, default:""}
 })
 
 const profileSchema = new Schema ({
@@ -37,7 +37,10 @@ const profileSchema = new Schema ({
         type: String,
         enum: ['', 'he/him', 'she/her', 'they/them', 'other', 'prefer not to say'],
     },
-    images: [imageSchema],
+    images: {
+        type: String,
+        min: 1
+    },
     likedProfiles: [{
         type: Schema.Types.ObjectId,
         ref: 'Profile',
