@@ -10,6 +10,8 @@ router.get('/me', ensureLoggedIn, profilesCtrl.showMe)
 
 router.get('/new', profilesCtrl.new)
 
+router.get('/match', ensureLoggedIn, profilesCtrl.match)
+
 router.get('/', profilesCtrl.checkNewUser, profilesCtrl.index)
 
 router.post('/', ensureLoggedIn, profilesCtrl.create)
@@ -25,6 +27,8 @@ router.put('/:id', ensureLoggedIn, profilesCtrl.addLike)
 router.get('/me/delete', ensureLoggedIn, profilesCtrl.deletePage)
 
 router.delete('/me/delete', ensureLoggedIn, profilesCtrl.destroy)
+
+
 
 module.exports = router;
 

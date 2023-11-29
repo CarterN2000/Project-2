@@ -8,9 +8,6 @@ const profileSchema = new Schema ({
     },
     birthday: {
         type: Date,
-
-        // required: true,
-
     },
     gender: {
         type: String,
@@ -42,6 +39,10 @@ const profileSchema = new Schema ({
         type: Schema.Types.ObjectId,
         ref: 'Profile',
       }],
+    matchedProfiles: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Profile'
+    }]
 })
 
 const Profile = mongoose.model('Profile', profileSchema)
