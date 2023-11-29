@@ -138,8 +138,10 @@ async function destroy(req, res) {
 async function match (req, res) {
     try {
         const allMatches = await Profile.findById(req.user.profile)
+        const matchIds = allMatches.matchedProfiles
+        const matchedProfiles = await Profile.find({ _id: { $in: matchIds } })
         res.render('profiles/match', {
-            matches: allMatches.matchedProfiles
+            matches: matchedProfiles
         })
     }
     catch(err){
