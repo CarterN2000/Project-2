@@ -39,7 +39,7 @@ const profileSchema = new Schema ({
     },
     images: {
         type: String,
-        min: 1
+        min: 1,
     },
     likedProfiles: [{
         type: Schema.Types.ObjectId,
@@ -48,7 +48,11 @@ const profileSchema = new Schema ({
     matchedProfiles: [{
         type: Schema.Types.ObjectId,
         ref: 'Profile'
-    }]
+    }],
+    dislikes: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Profile',
+    }],
 })
 
 const Profile = mongoose.model('Profile', profileSchema)
