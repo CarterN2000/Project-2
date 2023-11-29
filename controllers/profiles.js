@@ -13,6 +13,8 @@ module.exports = {
     addLike,
     deletePage, 
     destroy, 
+    match,
+
 
 }
 
@@ -92,14 +94,15 @@ async function addLike(req, res) {
         const userProfile = await Profile.findById(req.user.profile)
         const likedProfile = await Profile.findById(req.params.id)
 
-        userProfile.likedProfiles.push(likedProfile._id)
-
-        await userProfile.save()
-
-        console.log('saved user')
-
         if (likedProfile.likedProfiles.includes(userProfile._id)) {
-            console.log('wooohoooo')
+            userProfile.matchedProfiles.push(likedProfile._id)
+            likedProfile.matchedProfiles.push(userProfile._id)
+            await userProfile.save()
+            await likedProfile.save()
+        }
+        else {
+            userProfile.likedProfiles.push(likedProfile._id)
+            await userProfile.save()
         }
         res.redirect('/profiles')
     }
@@ -130,6 +133,18 @@ async function destroy(req, res) {
     // else {
     //     console.log('PROFILE DELETION ERROR')
     // }
+}
+
+async function match (req, res) {
+    try {
+        const allMatches = await Profile.findById(req.user.profile)
+        res.render('profiles/match', {
+            matches: allMatches.matchedProfiles
+        })
+    }
+    catch(err){
+        console.log(err)
+    }
 }
 
 function calculateAge(birthDate) {
