@@ -7,7 +7,7 @@
         <% matches.forEach(function(match){ %>
 
             <div>
-                <%= match.name %>
+                <a href="/profiles/match/<%= match._id %>"><%= match.name %></a>
                 <%= match.location %>
             </div>
 
