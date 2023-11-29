@@ -14,8 +14,7 @@ module.exports = {
     deletePage, 
     destroy, 
     match,
-
-
+    showMatch,
 }
 
 function newUser(req, res) {
@@ -142,6 +141,23 @@ async function match (req, res) {
         const matchedProfiles = await Profile.find({ _id: { $in: matchIds } })
         res.render('profiles/match', {
             matches: matchedProfiles
+        })
+    }
+    catch(err){
+        console.log(err)
+    }
+}
+
+async function showMatch(req, res) {
+    try {
+        const myMatch = await Profile.findById(req.params.id)
+        let age = 0
+        if (myMatch.birthday) {
+           age = calculateAge(myMatch.birthday)
+        }
+        res.render('profiles/showMatch', {
+            match: myMatch,
+            age,
         })
     }
     catch(err){
