@@ -1,6 +1,12 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
+const imageSchema = new Schema ({
+    url: {type: String, required: true},
+    description: { type: String},
+    alt: {type: String, default:""}
+})
+
 const profileSchema = new Schema ({
     name: {
         type: String,
@@ -33,7 +39,7 @@ const profileSchema = new Schema ({
     },
     images: {
         type: String,
-        min: 1,
+        min: 1
     },
     likedProfiles: [{
         type: Schema.Types.ObjectId,
