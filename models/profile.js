@@ -1,6 +1,12 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
+
+const imageSchema = new mongoose.Schema({
+    url: {type: String, required: true},
+    alt: {type: String, default:""} 
+})
+
 const profileSchema = new Schema ({
     name: {
         type: String,
@@ -31,10 +37,7 @@ const profileSchema = new Schema ({
         type: String,
         enum: ['', 'he/him', 'she/her', 'they/them', 'other', 'prefer not to say'],
     },
-    images: {
-        type: String,
-        min: 1,
-    },
+    images: [imageSchema],
     likedProfiles: [{
         type: Schema.Types.ObjectId,
         ref: 'Profile',
