@@ -23,17 +23,21 @@
         </div>
         <div id="userDetails">  
         <h1><%=profile.name%>, <%= age %></h1>
-            <form id="userForm" action="/profiles/<%= profile._id %>?_method=PUT" method="POST">
+          <div id="userForm">
                 <div>Lives In: <%= profile.location %></div>
                 <div>Looking for: <%= profile.desires %></div>
                 <div>About: <%= profile.aboutMe %></div>
                 <div>Preferred Languages: <%= profile.languages %></div>
                 <div>Job Title: <%= profile.jobTitle %></div>
-                <button class="bttn" type="submit">LIKE</button>
-                <button id="dislikeBttn" type="submit">DISLIKE</button>
+                <form action="/profiles/<%= profile._id %>?_method=PUT" method="POST">
+                  <button class="bttn" type="submit">LIKE</button>
+                </form>
+                <form action="/profiles/dislike/<%= profile._id %>?_method=PUT" method="POST">
+                  <button id="dislikeBttn" type="submit">DISLIKE</button>
+                </form>
                 <div id="likeInfo">*If you and <%=profile.name%> like each other you can continue the conversation in a private chat room!
                 </div>
-            </form>
+            </div>
         </div>
     </div>
   </div>

@@ -31,10 +31,8 @@ router.put('/me', ensureLoggedIn, profilesCtrl.update)
 
 router.put('/:id', ensureLoggedIn, profilesCtrl.addLike)
 
+router.put('/dislike/:id', ensureLoggedIn, profilesCtrl.dislike)
+
 router.delete('/me/delete', ensureLoggedIn, profilesCtrl.destroy)
-
-router.post('/:id/photos/single', upload.single("imageUpload"), profilesCtrl.imageUpload)
-
-
 module.exports = router;
 
