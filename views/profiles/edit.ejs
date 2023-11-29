@@ -28,7 +28,6 @@
             <div>Name: <%= profile.name%></div><br>
             <div>Birthday: <%= profile.birthday.toLocaleDateString('en-US')%></div><br>
                 
-            <!-- Need a 'user-profile' page where we can edit info -->
             <form action="/profiles/me?_method=PUT" method="POST" id="userForm">
                 <div>Gender: 
                     <select name="gender">

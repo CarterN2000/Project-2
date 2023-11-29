@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
+const multer = require("multer");
+const upload = multer({ dest: "uploads/test" });
+
 const ensureLoggedIn = require('../config/ensureLoggedIn')
 
 const profilesCtrl = require('../controllers/profiles')
@@ -29,6 +32,8 @@ router.put('/me', ensureLoggedIn, profilesCtrl.update)
 router.put('/:id', ensureLoggedIn, profilesCtrl.addLike)
 
 router.delete('/me/delete', ensureLoggedIn, profilesCtrl.destroy)
+
+router.post('/:id/photos/single', upload.single("imageUpload"), profilesCtrl.imageUpload)
 
 
 module.exports = router;

@@ -1,8 +1,6 @@
 <%- include('../partials/header')%>
 
-<!-- <h1>Welcome to Developing Feelings! Go ahead and .find(yourNewLove)</h1> -->
-
-<div class="header">
+<div class="header contentBox">
     <div id="welcome">
       <pre id="headerText">welcome.md       X  </pre>
     </div>
@@ -11,27 +9,11 @@
       </div>
 </div>
 
-<div class="main">
+<div class="main contentBox">
     <div id="profileGrid">
-        <!--           <div id="userContent"> -->
-            <!--           <p id="uploadImg">To upload an image, create a free profile on Imgur and upload an image there. Then you can copy and past the URL link to the image in the box below. 
-                      </p> -->
-        <!--               <div id="userDisplay">
-                        <div id="userName">Your Name</div> |
-                        <div id="userAge">Age</div> |
-                        <div id="userPronouns">Pronouns</div>|
-                        <div id="userJob"> Job Title</div> 
-                      </div> -->
-        <!--           </div> -->
-            
-      <!-- <div id="title">Developing Your      Feelings</div> -->
-      <!-- <button><a href="/auth/google" class="login">LOG IN</a></button> -->
-     <!-- <br> -->
-    <!-- <div id="login">Login</div> -->
-  
 
 <%profile.forEach(function(p){%>
-<div>
+<div class="contentBox">
     <img src="<%=p.images%>" alt="Profile Image" />
     <div><a href="/profiles/<%= p._id %>"><%= p.name%></a></div>
 
