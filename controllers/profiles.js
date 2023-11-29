@@ -13,7 +13,8 @@ module.exports = {
     addLike,
     deletePage, 
     destroy, 
-
+    match,
+    showMatch,
 }
 
 function newUser(req, res) {
@@ -92,14 +93,15 @@ async function addLike(req, res) {
         const userProfile = await Profile.findById(req.user.profile)
         const likedProfile = await Profile.findById(req.params.id)
 
-        userProfile.likedProfiles.push(likedProfile._id)
-
-        await userProfile.save()
-
-        console.log('saved user')
-
         if (likedProfile.likedProfiles.includes(userProfile._id)) {
-            console.log('wooohoooo')
+            userProfile.matchedProfiles.push(likedProfile._id)
+            likedProfile.matchedProfiles.push(userProfile._id)
+            await userProfile.save()
+            await likedProfile.save()
+        }
+        else {
+            userProfile.likedProfiles.push(likedProfile._id)
+            await userProfile.save()
         }
         res.redirect('/profiles')
     }
@@ -130,6 +132,37 @@ async function destroy(req, res) {
     // else {
     //     console.log('PROFILE DELETION ERROR')
     // }
+}
+
+async function match (req, res) {
+    try {
+        const allMatches = await Profile.findById(req.user.profile)
+        const matchIds = allMatches.matchedProfiles
+        const matchedProfiles = await Profile.find({ _id: { $in: matchIds } })
+        res.render('profiles/match', {
+            matches: matchedProfiles
+        })
+    }
+    catch(err){
+        console.log(err)
+    }
+}
+
+async function showMatch(req, res) {
+    try {
+        const myMatch = await Profile.findById(req.params.id)
+        let age = 0
+        if (myMatch.birthday) {
+           age = calculateAge(myMatch.birthday)
+        }
+        res.render('profiles/showMatch', {
+            match: myMatch,
+            age,
+        })
+    }
+    catch(err){
+        console.log(err)
+    }
 }
 
 function calculateAge(birthDate) {

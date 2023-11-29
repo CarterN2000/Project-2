@@ -1,0 +1,19 @@
+<%- include('../partials/header')%>
+
+    <h1>MATCHES!!!!</h1>
+
+
+    <% if (matches.length > 0) { %>
+        <% matches.forEach(function(match){ %>
+
+            <div>
+                <a href="/profiles/match/<%= match._id %>"><%= match.name %></a>
+                <%= match.location %>
+            </div>
+
+        <% }) %>
+    <% } else { %>
+            <p>No matches yet!</p>
+        <% } %>
+
+<%- include('../partials/footer')%>
