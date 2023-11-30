@@ -53,6 +53,7 @@ const profileSchema = new Schema ({
         type: Schema.Types.ObjectId,
         ref: 'Profile',
     }],
+    socials: String,
 })
 
 const Profile = mongoose.model('Profile', profileSchema)
