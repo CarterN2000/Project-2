@@ -11,19 +11,28 @@
 
 <div class="main contentBox">
     <div id="profileGrid">
-        <div id="userDetails">  
+        <div id="show-match-users" style="background-image: url(<%=match.images%>); 
+            background-repeat: no-repeat; 
+            background-size: cover;">
+            <div id="matchDisplay">
+                <div id="userName"><%= match.name %></div> |
+            
+                <div id="userPronouns"><%= match.pronouns %></div> |
+                <div id="userJob"> <%= match.jobTitle %></div> 
+            </div>
+        </div>
+        <div id="matchDetails">  
             <h1>Congrats! You matched with <%= match.name %>!</h1>
                 <form>
-                    <div>Age: <%= age %></div>
-                    <div>Lives In: <%= match.location %></div>
-                    <div>Looking for: <%= match.desires %></div>
-                    <div>About: <%= match.aboutMe %></div>
-                    <div>Preferred Languages: <%= match.languages %></div>
-                    <div>Job Title: <%= match.jobTitle %></div>
-                    <div id="likeInfo">*Start a chat with <%= match.name %>!
-                    </div>
-                </form>
-            </div>
+                    <div>Age: <%= age %></div><br>
+                    <div>Lives In: <%= match.location %></div><br>
+                    <div>Looking for: <%= match.desires %></div><br>
+                    <div>About: <%= match.aboutMe %></div><br>
+                    <div>Preferred Languages: <%= match.languages %></div><br>
+                    <div>Job Title: <%= match.jobTitle %></div><br>
+               </form>
+        </div>
+    </div>
     </div>
 </div>
 

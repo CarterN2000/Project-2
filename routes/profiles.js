@@ -1,9 +1,6 @@
 const express = require('express');
 const router = express.Router();
 
-// const multer = require("multer");
-// const upload = multer({ dest: "uploads/test" });
-
 const ensureLoggedIn = require('../config/ensureLoggedIn')
 
 const profilesCtrl = require('../controllers/profiles')

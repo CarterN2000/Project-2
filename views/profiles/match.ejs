@@ -18,8 +18,19 @@
         <% matches.forEach(function(match){ %>
 
             <div class="contentBox">
-                <a href="/profiles/match/<%= match._id %>"><%= match.name %></a>
-                <%= match.location %>
+                <div id="matchUsers" style="background-image: url(<%=match.images%>); 
+                        background-repeat: no-repeat; 
+                        background-size: cover;">
+                    <div id="matchDisplay">
+                        <a id="matchBttn" href="/profiles/match/<%= match._id %>">
+                            <%= match.name %>
+                        </a> 
+                        <div id="userPronouns"><%= match.pronouns %></div> |
+                        <div id="userJob"> <%= match.jobTitle %></div> 
+                    </div>
+                </div>
+                <!-- <a href="/profiles/match/<#= match._id %>"><#= match.name %></a>
+                <#= match.location %> -->
             </div>
 
         <% }) %>
