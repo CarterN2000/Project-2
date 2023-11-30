@@ -1,6 +1,5 @@
-<%- include('../partials/header')%>
 
-<div class="header">
+<!-- <div class="header">
     <div id="welcome">
       <pre id="headerText">welcome.md       X  </pre>
     </div>
@@ -8,21 +7,33 @@
     <div id="userProfile">
       <pre id="headerText">  Your-Profile-Info.md   X  </pre>
     </div>
-  </div>
-  
-  <div class="main">
-    <div id="profileGrid">
+  </div> -->
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital@1&family=Kavivanar&family=Montserrat+Alternates&display=swap" rel="stylesheet">
+</head>
+<body>
 
-    <div id="userDetails"> <h2>Your Profile</h2>
+    <div class="main">
+        <div id="userDetails">
+            <h1 id="oogaBooga"><span id="ooga">DEVELOPING(</span>FEELINGS<span id="ooga">)</span><span id="booga"> ♥</span></h1>
 
-        <form id="userForm" action="/profiles/me?_method=PUT" method="POST">
 
-                <div id="userName">Whats your name? <input type="text" name="name" required></div><br>
-                <div id="userDob">What is your date of birth? <input type="date" name="birthday" required></div><br>
-                <div id="userLoc">Where are you from? <input type="text" name="location"></div><br>
-                <div id="userJob">What is your current position? <input type="text" name="jobTitle"></div><br>
-                <div id="userLang">What are your favorite programming languages? <br>
-                    <select name="languages" multiple size="4">
+             <h2><span id="oogaBooga">Your</span> <span id="oogaBoogaBoDooga">Profile</span></h2><br>
+
+            <form action="/profiles/me?_method=PUT" method="POST">
+                <div id="userNameNew">Whats <span id="oogaBooga">your</span> name? <input type="text" name="name" required></div><br>
+                <div id="userDobNew">What is <span id="oogaBooga">your</span> date of birth? <input type="date" name="birthday" required></div><br>
+                <div id="userLocNew">Where are <span id="oogaBooga">you</span> from? <input type="text" name="location"></div><br>
+                <div id="userJobNew">What is <span id="oogaBooga">your</span> <span id="ooga">current(</span> <span id="oogaBooga">position</span><span id="ooga">)</span>? <input type="text" name="jobTitle"></div><br>
+                <div id="userLangNew">What is <span id="oogaBooga">your</span> favorite programming language?
+                    <select name="languages">
                         <option name="C++">C++</option>
                         <option name="C#">C#</option>
                         <option name="Python">Python</option>
@@ -37,7 +48,7 @@
                         <option name="Scratch">Scratch</option>
                     </select>
                 </div><br>
-                <div id="userDes">What are you looking for? 
+                <div id="userDesNew">What are <span id="oogaBooga">you</span> looking for? 
                     <select name="desires">
                         <option name="Long-Term Relationship">Long-Term Relationship</option>
                         <option name="Short-Term Fun">Short-Term Fun</option>
@@ -45,10 +56,10 @@
                         <option name="Undecided">Undecided</option>
                     </select>
                 </div><br>
-                <div id="about">Tell us about yourself: <br>
-                    <textarea name="aboutMe" cols="30" rows="10" maxlength="500" placeholder=" max-length 500 characters" required></textarea>
+                <div id="aboutNew">
+                    <textarea id="newMeText" name="aboutMe" cols="30" rows="10" maxlength="500" placeholder="Tell us about yourself (max-length 500 characters)" required></textarea>
                 </div><br>
-                <div id="pronouns">Pronouns:
+                <div id="pronounsNew">What are <span id="oogaBooga">your</span> pronouns?
                     <select name="pronouns">
                         <option selected></option>
                         <option name="he/him">he/him</option>
@@ -58,26 +69,25 @@
                         <option name="prefer not to say">prefer not to say</option>
                     </select>
                 </div><br>
-             
+                <div id="socialsNew"><span id="ooga">.insert(</span><span id="oogaBooga">link</span><span id="ooga">)</span> to a social media of <span id="oogaBooga">yours</span> so matches can <span id="ooga">.find(</span><span id="oogaBooga">you</span><span id="ooga">)</span>!
+                    <input type="text" name="socials" required>
+                </div><br>
+<!--              
                 <div id="uploadImg">
                     <p id="uploadText">To upload an image, create a free profile on Imgur 
                         and upload an image there. Then copy and past the URL link 
                         to the image in the box below. 
                     </p>
                     <input id="imageUrl"/>
-                </div>
 
-            
-            
-            
-                </div>
-                <div id="submitBttn">
-                    <button type="submit" class="bttn">Next</button>
+                </div> -->
+          
+                <div id="submitBttnNew">
+                    <button type="submit" class="bttn">Create Profile</button>
                 </div>
             </form>
            
        </div>
-    </div>
   </div>
   
 

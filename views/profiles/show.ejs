@@ -12,9 +12,8 @@
   
   <div class="main">
     <div id="profileGrid">
-        <div id="userContent" style="background-image: url(<%=profile.images%>); 
-                                     background-repeat: no-repeat; 
-                                     background-size: cover;">
+        <div id="userContent"> 
+            <img src='<%= profile.images.length > 0 ? profile.images[0]?.url : "/stylesheets/defaultImage.png" %>'>
             <div id="userDisplay">
             <div id="userName"><%=profile.name%></div> |
             <div id="userPronouns"><%= profile.pronouns %></div> |
@@ -23,18 +22,22 @@
         </div>
         <div id="userDetails">  
         <h1><%=profile.name%>, <%= age %></h1>
-            <form id="userForm" action="/profiles/<%= profile._id %>?_method=PUT" method="POST">
+          <div id="userForm">
                 <div>Lives In: <%= profile.location %></div>
                 <div>Looking for: <%= profile.desires %></div>
                 <div>About: <%= profile.aboutMe %></div>
                 <div>Preferred Languages: <%= profile.languages %></div>
                 <div>Job Title: <%= profile.jobTitle %></div>
-                <div><img src="<%= profile.images[0]?.url %>"></div>
-                <button class="bttn" type="submit">LIKE</button>
-                <button id="dislikeBttn" type="submit">DISLIKE</button>
-                <div id="likeInfo">*If you and <%=profile.name%> like each other you can continue the conversation in a private chat room!
+
+                <form action="/profiles/<%= profile._id %>?_method=PUT" method="POST">
+                  <button class="bttn" type="submit">LIKE</button>
+                </form>
+                <form action="/profiles/dislike/<%= profile._id %>?_method=PUT" method="POST">
+                  <button id="dislikeBttn" type="submit">DISLIKE</button>
+                </form>
+                <!-- <div id="likeInfo">*If you and <#=profile.name%> like each other you can continue the conversation in a private chat room! -->
                 </div>
-            </form>
+            </div>
         </div>
     </div>
   </div>

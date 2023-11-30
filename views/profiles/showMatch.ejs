@@ -1,18 +1,39 @@
 <%- include('../partials/header')%>
 
-<div id="userDetails">  
-    <h1>Congrats! You matched with <%= match.name %>!</h1>
-        <form>
-            <div>Age: <%= age %></div>
-            <div>Lives In: <%= match.location %></div>
-            <div>Looking for: <%= match.desires %></div>
-            <div>About: <%= match.aboutMe %></div>
-            <div>Preferred Languages: <%= match.languages %></div>
-            <div>Job Title: <%= match.jobTitle %></div>
-            <div><img src="<%= profile.images[0]?.url %>"></div>
-            <div id="likeInfo">*Start a chat with <%= match.name %>!
-            </div>
-        </form>
+
+<div class="header contentBox">
+    <div id="welcome">
+      <pre id="headerText">welcome.md       X  </pre>
     </div>
+    <div id="userProfile">
+        <pre id="headerText"> <%= match.name %>'s-Profile.md   X  </pre>
+      </div>
+</div>
+
+<div class="main contentBox">
+    <div id="profileGrid">
+        <div id="show-match-users"> 
+            <img src='<%= match.images.length > 0 ? match.images[0]?.url : "/stylesheets/defaultImage.png" %>'> 
+            <div id="matchDisplay">
+                <div id="userName"><%= match.name %></div> |
+            
+                <div id="userPronouns"><%= match.pronouns %></div> |
+                <div id="userJob"> <%= match.jobTitle %></div> 
+            </div>
+        </div>
+        <div id="matchDetails">  
+            <h1>Congrats! You matched with <%= match.name %>!</h1>
+                <form>
+                    <div>Age: <%= age %></div><br>
+                    <div>Lives In: <%= match.location %></div><br>
+                    <div>Looking for: <%= match.desires %></div><br>
+                    <div>About: <%= match.aboutMe %></div><br>
+                    <div>Preferred Languages: <%= match.languages %></div><br>
+                    <div>Job Title: <%= match.jobTitle %></div><br>
+               </form>
+        </div>
+    </div>
+    </div>
+</div>
 
 <%- include('../partials/footer')%>

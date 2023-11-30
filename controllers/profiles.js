@@ -16,7 +16,8 @@ module.exports = {
     destroy, 
     match,
     showMatch,
-    imageUpload
+    imageUpload,
+    dislike
 }
 
 const cloudinary = require("cloudinary").v2;
@@ -34,8 +35,14 @@ function newUser(req, res) {
 async function index(req, res) {
     try {
         const allProfiles = await Profile.find()
+        const myProfile = await Profile.findById(req.user.profile)
+        const notDisliked = allProfiles.filter(function(profile){
+            if(!myProfile.dislikes.includes(profile._id)){
+                return profile
+            }
+        })
         res.render('profiles/index', {
-            profile: allProfiles,
+            profile: notDisliked,
         })
     }
     catch (err) {
@@ -121,6 +128,19 @@ async function addLike(req, res) {
     catch(err) {
         console.log(err)
     }
+}
+
+async function dislike(req, res) {
+    const userProfile = await Profile.findById(req.user.profile)
+    const dislikedProfile = await Profile.findById(req.params.id)
+
+    // console.log(userProfile)
+    // console.log(dislikedProfile._id)
+
+    userProfile.dislikes.push(dislikedProfile._id)
+    await userProfile.save()
+
+    res.redirect('/profiles')
 }
 
 async function deletePage(req, res) {

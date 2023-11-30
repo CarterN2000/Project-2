@@ -5,7 +5,6 @@
     <div id="welcome">
       <pre id="headerText">welcome.md       X  </pre>
     </div>
-    
 
     <div id="userProfile">
       <pre id="headerText">  Edit-Your-Profile.md   X  </pre>
@@ -24,9 +23,9 @@
                 </div>
             </div>
         <div id="userDetails">
-            <h1>Edit Profile</h1>
-            <div>Name: <%= profile.name%></div><br>
-            <div>Birthday: <%= profile.birthday.toLocaleDateString('en-US')%></div><br>
+            <h1 id="editProfile">Edit Profile</h1>
+            <div id="editName">Name: <%= profile.name%></div><br>
+            <div id="editBirthday">Birthday: <%= profile.birthday.toLocaleDateString('en-US')%></div><br>
                 
             <form action="/profiles/me?_method=PUT" method="POST" id="userForm">
                 <div>Gender: 
@@ -38,8 +37,8 @@
                 </div><br>
                 <div id="userLoc">Located in: <input type="text" name="location" value="<%= profile.location%>"></div><br>
                 <div id="userJob">What is your current position? <input type="text" name="jobTitle" value="<%= profile.jobTitle%>"></div><br>
-                <div id="userLang">What are your favorite programming languages? <br>
-                    <select name="languages" multiple size="4">
+                <div id="userLang">What is your favorite programming language?
+                    <select name="languages" value="<%= profile.languages%>">
                         <option name="C++">C++</option>
                         <option name="C#">C#</option>
                         <option name="Python">Python</option>
@@ -63,11 +62,11 @@
                     </select>
                 </div><br>
                 <div id="about">Tell us about yourself: <br>
-                    <textarea name="aboutMe" value="<%= profile.aboutMe%>" cols="30" rows="10" maxlength="500" placeholder=" max-length 500 characters" required></textarea>
+                    <textarea name="aboutMe" cols="30" rows="10" maxlength="500" placeholder=" max-length 500 characters" required><%= profile.aboutMe%></textarea>
                 </div><br>
                 <div id="pronouns">Pronouns:
-                    <select name="pronouns" value="<%= profile.pronouns%>">
-                        <option selected></option>
+                    <select name="pronouns" value="<%=profile.pronouns%>">
+                        <option></option>
                         <option name="he/him">he/him</option>
                         <option name="she/her">she/her</option>
                         <option name="they/them">they/them</option>
@@ -75,14 +74,19 @@
                         <option name="prefer not to say">prefer not to say</option>
                     </select>
                 </div>
-                <div id="uploadImg">
+                <div id="socials"> Social media for your matches!
+                    <input type="text" name="socials" value="<%= profile.socials%>" required>
+                </div><br>
+                <!-- <div id="uploadImg">
                     <p id="uploadText">To upload an image, create a free profile on Imgur 
                         and upload an image there. Then copy and past the URL link 
                         to the image in the box below. 
                     </p>
                     <input id="imageUrl"/>
-                </div>
-                <div><button type="submit" class="bttn">Update Profile</button></div>
+                </div> -->
+                <!-- <div> -->
+                    <button id="editBttn" type="submit" class="bttn">Update Profile</button>
+                <!-- </div> -->
             </form>
         </div>
     </div>
