@@ -30,7 +30,7 @@
                 <div>About: <span id="oogaBooga"><%= profile.aboutMe %></span></div>
                 <div>Preferred <span id="ooga">Language</span>: <span id="oogaBooga"><%= profile.languages %></span></div>
                 <div>Job Title: <span id="oogaBooga"><%= profile.jobTitle %></span></div>
-                <div>Social <span id="ooga">Media</span> Link: <span id="sexyLink"><%= profile.socials %></span></div>
+                <div>Social <span id="ooga">Media</span> Link: <a id="sexyLink" href="<%= profile.socials %>"><%= profile.socials %></a></div>
                     <a class="bttn" href="/profiles/me/edit" role="button">
                         <p>EDIT PROFILE </p>
                     </a>
