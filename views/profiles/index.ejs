@@ -12,18 +12,15 @@
 <div class="main contentBox">
     <div id="profileGrid">
 
-<%profile.forEach(function(p){%>
-<div class="contentBox">
-    <img src="<%=p.images%>" alt="Profile Image" />
-    <div><a href="/profiles/<%= p._id %>"><%= p.name%></a></div>
+        <%profile.forEach(function(p){%>
+        <div class="contentBox">
+            <img src="<%=p.images%>" alt="Profile Image" />
+            <div><a href="/profiles/<%= p._id %>"><%= p.name%></a></div>
 
-    <div><%= p.location %></div>
-</div>
-  
-<%})%>
-
-
-
+            <div><%= p.location %></div>
+        </div>
+        
+        <%})%>
     </div>
 </div>
 

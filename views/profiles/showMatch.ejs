@@ -1,17 +1,30 @@
 <%- include('../partials/header')%>
 
-<div id="userDetails">  
-    <h1>Congrats! You matched with <%= match.name %>!</h1>
-        <form>
-            <div>Age: <%= age %></div>
-            <div>Lives In: <%= match.location %></div>
-            <div>Looking for: <%= match.desires %></div>
-            <div>About: <%= match.aboutMe %></div>
-            <div>Preferred Languages: <%= match.languages %></div>
-            <div>Job Title: <%= match.jobTitle %></div>
-            <div id="likeInfo">*Start a chat with <%= match.name %>!
-            </div>
-        </form>
+<div class="header contentBox">
+    <div id="welcome">
+      <pre id="headerText">welcome.md       X  </pre>
     </div>
+    <div id="userProfile">
+        <pre id="headerText"> <%= match.name %>'s-Profile.md   X  </pre>
+      </div>
+</div>
+
+<div class="main contentBox">
+    <div id="profileGrid">
+        <div id="userDetails">  
+            <h1>Congrats! You matched with <%= match.name %>!</h1>
+                <form>
+                    <div>Age: <%= age %></div>
+                    <div>Lives In: <%= match.location %></div>
+                    <div>Looking for: <%= match.desires %></div>
+                    <div>About: <%= match.aboutMe %></div>
+                    <div>Preferred Languages: <%= match.languages %></div>
+                    <div>Job Title: <%= match.jobTitle %></div>
+                    <div id="likeInfo">*Start a chat with <%= match.name %>!
+                    </div>
+                </form>
+            </div>
+    </div>
+</div>
 
 <%- include('../partials/footer')%>
