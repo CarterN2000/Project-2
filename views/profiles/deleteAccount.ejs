@@ -1,12 +1,43 @@
 <%- include('../partials/header')%>
 
-<h1>Are you sure? We'd hate to see you go!</h1>
+<div class="header">
+    <div id="welcome">
+      <pre id="headerText">welcome.md       X  </pre>
+    </div>
+    
+    <div id="userProfile">
+      <pre id="headerText"> Delete-Your-Profile.md   X  </pre>
+    </div>
+  </div>
 
-<div>
-    <form action="../../profiles/me/delete?_method=DELETE" method="POST">   
-        <button type="submit">DESTROY</button>
-    </form>
-    <a href="../../profiles/me">jk I change my mind</a>
+<div class="main">
+    <div id="profileGrid">
+        <!-- <div id="userContent" style="background-image: url(<%=profile.images%>); 
+                                     background-repeat: no-repeat; 
+                                     background-size: cover;">
+           <div id="userDisplay">
+               <div id="userName"><#=profile.name%></div> |
+               <div id="userPronouns"><#= profile.pronouns %></div> |
+              <div id="userJob"> <#= profile.jobTitle %></div> 
+           </div>
+        </div> -->
+
+            <div id="userDetails">
+                <h1>Are you sure? We'd hate to see you go!</h1>
+                <br>
+                <img id="deleteImg" src="/stylesheets/delete.png" />
+                <div id="delete-bttns-box">
+                    <form action="../../profiles/me/delete?_method=DELETE" method="POST">   
+                        <button id="deleteBttn" type="submit">DESTROY PROFILE</button>
+                    </form>
+                    <a id="saveBttn" href="../../profiles/me">
+                        <p>jk I changed my mind</p>
+                    </a>
+                </div>
+              </div>
+           </div>
+
+    </div>
 </div>
 
 <%- include('../partials/footer')%>
