@@ -1,12 +1,23 @@
 <%- include('../partials/header')%>
 
-    <h1>MATCHES!!!!</h1>
+<div class="header contentBox">
+    <div id="welcome">
+      <pre id="headerText">welcome.md       X  </pre>
+    </div>
+    <div id="userProfile">
+        <pre id="headerText">  MATCHES!!!!.md   X  </pre>
+      </div>
+</div>
 
+<div class="main contentBox">
+    <div id="profileGrid">
+
+    <!-- <h1>MATCHES!!!!</h1> -->
 
     <% if (matches.length > 0) { %>
         <% matches.forEach(function(match){ %>
 
-            <div>
+            <div class="contentBox">
                 <a href="/profiles/match/<%= match._id %>"><%= match.name %></a>
                 <%= match.location %>
             </div>
@@ -15,5 +26,7 @@
     <% } else { %>
             <p>No matches yet!</p>
         <% } %>
+    </div>
+</div>
 
 <%- include('../partials/footer')%>
