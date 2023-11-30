@@ -17,10 +17,10 @@
     <% if (matches.length > 0) { %>
         <% matches.forEach(function(match){ %>
 
+
             <div class="contentBox">
-                <div id="matchUsers" style="background-image: url(<%=match.images%>); 
-                        background-repeat: no-repeat; 
-                        background-size: cover;">
+                <div id="matchUsers" >
+                    <img src='<%= match.images.length > 0 ? match.images[0]?.url : "/stylesheets/defaultImage.png" %>'>
                     <div id="matchDisplay">
                         <a id="matchBttn" href="/profiles/match/<%= match._id %>">
                             <%= match.name %>

@@ -8,6 +8,7 @@ module.exports = {
     show,
     edit,
     update,
+    addPhoto,
     showMe,
     checkNewUser,
     addLike,
@@ -15,8 +16,14 @@ module.exports = {
     destroy, 
     match,
     showMatch,
-    dislike,
+    imageUpload,
+    dislike
 }
+
+const cloudinary = require("cloudinary").v2;
+const streamifier = require("streamifier");
+const {clConfig} = require("../config/cloudinary.js");
+cloudinary.config(clConfig);
 
 function newUser(req, res) {
     const user = req.user
@@ -86,6 +93,12 @@ async function update(req, res) {
     await Profile.findByIdAndUpdate(req.user.profile, req.body, {new: true})
     await User.findByIdAndUpdate(req.user._id, {newUser: false})
     res.redirect('/profiles/me')
+}
+
+async function addPhoto(req, res) {
+    res.render('profiles/addPhoto', {
+        
+    })
 }
 
 async function showMe(req, res) {
@@ -214,4 +227,37 @@ function checkNewUser(req, res, next) {
     else {
         next()
     }
+}
+
+
+async function imageUpload(req,res,next){
+    try {
+        let result = await streamUpload(req)
+
+        console.log(req.user.profile)
+        const profile = await Profile.findById(req.user.profile)
+        const newImage = { url: result.url, alt: req.body.alt}
+        profile.images.push(newImage)
+        await profile.save()
+        
+        res.redirect('/profiles/me')
+    }catch(err){
+        console.log(err)
+        next(err)
+    }
+}
+
+function streamUpload (req){
+    return new Promise(function (resolve, reject){
+        let stream = cloudinary.uploader.upload_stream( function(error, result){
+            if(result){
+                console.log(result)
+                resolve(result)
+            }else{
+                reject(error)
+            }
+        });
+        
+        streamifier.createReadStream(req.file.buffer).pipe(stream)
+    })
 }

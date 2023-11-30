@@ -1,5 +1,6 @@
 <%- include('../partials/header')%>
 
+
 <div class="header contentBox">
     <div id="welcome">
       <pre id="headerText">welcome.md       X  </pre>
@@ -11,9 +12,8 @@
 
 <div class="main contentBox">
     <div id="profileGrid">
-        <div id="show-match-users" style="background-image: url(<%=match.images%>); 
-            background-repeat: no-repeat; 
-            background-size: cover;">
+        <div id="show-match-users"> 
+            <img src='<%= match.images.length > 0 ? match.images[0]?.url : "/stylesheets/defaultImage.png" %>'> 
             <div id="matchDisplay">
                 <div id="userName"><%= match.name %></div> |
             

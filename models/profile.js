@@ -37,10 +37,7 @@ const profileSchema = new Schema ({
         type: String,
         enum: ['', 'he/him', 'she/her', 'they/them', 'other', 'prefer not to say'],
     },
-    images: {
-        type: String,
-        min: 1,
-    },
+    images: [imageSchema],
     likedProfiles: [{
         type: Schema.Types.ObjectId,
         ref: 'Profile',
