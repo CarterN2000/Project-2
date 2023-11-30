@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router();
 
 const multer = require("multer");
-const upload = multer({ dest: "uploads/test" });
+const upload = multer();
+
 
 const ensureLoggedIn = require('../config/ensureLoggedIn')
 
@@ -23,9 +24,13 @@ router.get('/', profilesCtrl.checkNewUser, profilesCtrl.index)
 
 router.get('/match/:id', profilesCtrl.showMatch)
 
+router.get('/me/addPhoto', profilesCtrl.addPhoto)
+
 router.get('/:id', profilesCtrl.show)
 
 router.post('/', ensureLoggedIn, profilesCtrl.create)
+
+router.post('/me', upload.single("imageUpload"), profilesCtrl.imageUpload)
 
 router.put('/me', ensureLoggedIn, profilesCtrl.update)
 
@@ -33,7 +38,6 @@ router.put('/:id', ensureLoggedIn, profilesCtrl.addLike)
 
 router.delete('/me/delete', ensureLoggedIn, profilesCtrl.destroy)
 
-router.post('/:id/photos/single', upload.single("imageUpload"), profilesCtrl.imageUpload)
 
 
 

@@ -31,9 +31,11 @@
                 <div>About: <%= profile.aboutMe %></div>
                 <div>Preferred Languages: <%= profile.languages %></div>
                 <div>Job Title: <%= profile.jobTitle %></div>
+                <div><img src="<%= profile.images[0]?.url %>"></div>
                     <a class="bttn" href="/profiles/me/edit" role="button">
                         <p>EDIT PROFILE </p>
                     </a>
+                    <a class="bttn"href="/profiles/me/addPhoto"><p>ADD PHOTO</p> </a>
                     <a href="me/delete" id="dislikeBttn" role="button"> 
                       <p>SAY GOODBYE</p>
                     </a>

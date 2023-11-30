@@ -29,6 +29,7 @@
                 <div>About: <%= profile.aboutMe %></div>
                 <div>Preferred Languages: <%= profile.languages %></div>
                 <div>Job Title: <%= profile.jobTitle %></div>
+                <div><img src="<%= profile.images[0]?.url %>"></div>
                 <button class="bttn" type="submit">LIKE</button>
                 <button id="dislikeBttn" type="submit">DISLIKE</button>
                 <div id="likeInfo">*If you and <%=profile.name%> like each other you can continue the conversation in a private chat room!
