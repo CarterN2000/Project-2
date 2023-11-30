@@ -30,6 +30,13 @@
             <form action="/profiles/me?_method=PUT" method="POST">
                 <div id="userNameNew">Whats <span id="oogaBooga">your</span> name? <input type="text" name="name" required></div><br>
                 <div id="userDobNew">What is <span id="oogaBooga">your</span> date of birth? <input type="date" name="birthday" required></div><br>
+                <div id="userGenderNew">What is <span id="oogaBooga">your</span> gender?
+                    <select name="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div><br>
                 <div id="userLocNew">Where are <span id="oogaBooga">you</span> from? <input type="text" name="location"></div><br>
                 <div id="userJobNew">What is <span id="oogaBooga">your</span> <span id="ooga">current(</span> <span id="oogaBooga">position</span><span id="ooga">)</span>? <input type="text" name="jobTitle"></div><br>
                 <div id="userLangNew">What is <span id="oogaBooga">your</span> favorite programming language?

@@ -30,31 +30,31 @@
             <form action="/profiles/me?_method=PUT" method="POST" id="userForm">
                 <div>Gender: 
                     <select name="gender">
-                        <option name="male">Male</option>
-                        <option name="female">Female</option>
-                        <option name="other">Other</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
                     </select>
                 </div><br>
                 <div id="userLoc">Located in: <input type="text" name="location" value="<%= profile.location%>"></div><br>
                 <div id="userJob">What is your current position? <input type="text" name="jobTitle" value="<%= profile.jobTitle%>"></div><br>
                 <div id="userLang">What is your favorite programming language?
-                    <select name="languages" value="<%= profile.languages%>">
-                        <option name="C++">C++</option>
-                        <option name="C#">C#</option>
-                        <option name="Python">Python</option>
-                        <option name="Javascript">Javascript</option>
-                        <option name="Java">Java</option>
-                        <option name="CSS">CSS</option>
-                        <option name="HTML">HTML</option>
-                        <option name="Rust">Rust</option>
-                        <option name="PHP">PHP</option>
-                        <option name="C">C</option>
-                        <option name="Go">Go</option>
-                        <option name="Scratch">Scratch</option>
+                    <select name="languages">
+                        <option value="C++">C++</option>
+                        <option value="C#">C#</option>
+                        <option value="Python">Python</option>
+                        <option value="Javascript">Javascript</option>
+                        <option value="Java">Java</option>
+                        <option value="CSS">CSS</option>
+                        <option value="HTML">HTML</option>
+                        <option value="Rust">Rust</option>
+                        <option value="PHP">PHP</option>
+                        <option value="C">C</option>
+                        <option value="Go">Go</option>
+                        <option value="Scratch">Scratch</option>
                     </select>
                 </div><br>
-                <div  id="userDes">What are you looking for? 
-                    <select name="desires" value="<%= profile.desires%>">
+                <div  id="userDes">What are you looking for?
+                    <select name="desires">
                         <option name="Long-Term Relationship">Long-Term Relationship</option>
                         <option name="Short-Term Fun">Short-Term Fun</option>
                         <option name="Open-Relationship">Open-Relationship</option>
@@ -68,7 +68,7 @@
                     <select name="pronouns" value="<%=profile.pronouns%>">
                         <option></option>
                         <option name="he/him">he/him</option>
-                        <option name="she/her">she/her</option>
+                        <option name="she/her" selected>she/her</option>
                         <option name="they/them">they/them</option>
                         <option name="other">other</option>
                         <option name="prefer not to say">prefer not to say</option>
@@ -77,13 +77,6 @@
                 <div id="socials"> Social media for your matches!
                     <input type="text" name="socials" value="<%= profile.socials%>" required>
                 </div><br>
-                <!-- <div id="uploadImg">
-                    <p id="uploadText">To upload an image, create a free profile on Imgur 
-                        and upload an image there. Then copy and past the URL link 
-                        to the image in the box below. 
-                    </p>
-                    <input id="imageUrl"/>
-                </div> -->
                 <!-- <div> -->
                     <button id="editBttn" type="submit" class="bttn">Update Profile</button>
                 <!-- </div> -->
