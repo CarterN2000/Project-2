@@ -117,16 +117,61 @@ body {
    justify-content: center;
    border: rgba(85, 85, 85, 1) solid 2px; 
  }
-   .mainBg {
+   #mainBg {
     background-image: url('loginBG.png');
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center bottom;
    }
+
+/* .imgHolder {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  border: 1px solid red;
+  height: 100px;
+  width: 200px;
+} */
+
+
+/* #backgroundImg {
+    width: 500px;
+    height: 400px;
+   } */
 
  #title{
    font-size: 50px;
    align-self: center;
    background-color:rgba(0, 0, 0, 0.5);
+   font-family: 'Montserrat Alternates', sans-serif;
+
+ }
+
+ #oogaBooga {
+  font-family: 'Montserrat Alternates', sans-serif;
+  color: rgb(55, 198, 255)
+ }
+
+ #ooga {
+  color: rgb(227, 227, 145);
+ }
+
+ #booga {
+  color: rgb(253, 46, 46);
+ }
+
+ #oogaBoogaBoDooga {
+  color: rgb(16, 230, 194);
+ }
+
+ #sexyFont {
+  font-family: 'Montserrat Alternates', sans-serif;
+ }
+
+ #sexyLink {
+  color: rgb(55, 198, 255);
+  text-decoration: underline;
  }
 
  #profileGrid{
