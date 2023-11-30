@@ -22,16 +22,16 @@
             </div>
         </div>
         <div id="userDetails">  
-          <h1>Nice profile, <%= profile.name %>!</h1>
-           <h3>Your Stats are below:</h3>
+          <h1 id="sexyFont">Nice profile, <span id="oogaBoogaBoDooga"><%= profile.name %></span>!</h1>
+           <h3>Your <span id="ooga">Stats</span> are Below:</h3>
             <div id="userGrid">
-                <div><%= profile.birthday.toLocaleDateString('en-US') %></div>
-                <div>Lives In: <%= profile.location %></div>
-                <div>Looking For: <%= profile.desires %></div>
+                <!-- <div><%= profile.birthday.toLocaleDateString('en-US') %></div> -->
+                <div>Lives In: <span id="oogaBooga"><%= profile.location %></span></div>
+                <div>Looking For: <span id="oogaBooga"><%= profile.desires %></span></div>
                 <div>About: <%= profile.aboutMe %></div>
-                <div>Preferred Languages: <%= profile.languages %></div>
-                <div>Job Title: <%= profile.jobTitle %></div>
-                <div>Social Media Link: <%= profile.socials %></div>
+                <div>Preferred Language: <span id="oogaBooga"><%= profile.languages %></span></div>
+                <div>Job Title: <span id="oogaBooga"><%= profile.jobTitle %></span></div>
+                <div>Social Media Link: <span id="sexyLink"><%= profile.socials %></span></div>
                     <a class="bttn" href="/profiles/me/edit" role="button">
                         <p>EDIT PROFILE </p>
                     </a>
