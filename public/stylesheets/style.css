@@ -116,11 +116,13 @@ body {
    display: flex;
    justify-content: center;
    border: rgba(85, 85, 85, 1) solid 2px; 
-   background-image: url('loginBG.png');
-   background-size: contain;
-   background-repeat: no-repeat;
-   
  }
+   .mainBg {
+    background-image: url('loginBG.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+   }
+
  #title{
    font-size: 50px;
    align-self: center;
@@ -377,7 +379,22 @@ gap: 20px;
 /************** end of button styling **************/
 
 
+/************** NEW PAGE STYLING **************/
 
+#aboutNew{
+  width: 450px;
+  /* border: 1px solid red; */
+
+}
+#newMeText {
+  width: 100%;
+  height: 100%;
+}
+
+#submitBttnNew{
+  display: flex;
+  justify-content: center;
+}
 
  /************** Footer stylong below **************/
 /*  

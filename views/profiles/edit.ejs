@@ -38,8 +38,8 @@
                 </div><br>
                 <div id="userLoc">Located in: <input type="text" name="location" value="<%= profile.location%>"></div><br>
                 <div id="userJob">What is your current position? <input type="text" name="jobTitle" value="<%= profile.jobTitle%>"></div><br>
-                <div id="userLang">What is your favorite programming language? <br>
-                    <select name="languages" multiple size="4" value="<%= profile.languages%>">
+                <div id="userLang">What is your favorite programming language?
+                    <select name="languages" value="<%= profile.languages%>">
                         <option name="C++">C++</option>
                         <option name="C#">C#</option>
                         <option name="Python">Python</option>
@@ -75,13 +75,16 @@
                         <option name="prefer not to say">prefer not to say</option>
                     </select>
                 </div>
-                <div id="uploadImg">
+                <div id="socials"> Social media for your matches!
+                    <input type="text" name="socials" value="<%= profile.socials%>" required>
+                </div><br>
+                <!-- <div id="uploadImg">
                     <p id="uploadText">To upload an image, create a free profile on Imgur 
                         and upload an image there. Then copy and past the URL link 
                         to the image in the box below. 
                     </p>
                     <input id="imageUrl"/>
-                </div>
+                </div> -->
                 <div><button type="submit" class="bttn">Update Profile</button></div>
             </form>
         </div>
