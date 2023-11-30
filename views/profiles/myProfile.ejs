@@ -13,7 +13,7 @@
   <div class="main">
     <div id="profileGrid">
         <div id="userContent"> 
-        <img src='<%= profile.images.length > 0 ? profile.images[0]?.url : "/stylesheets/defaultImage.png" %>'>
+            <img src='<%= profile.images.length > 0 ? profile.images[0]?.url : "/stylesheets/defaultImage.png" %>'>
             <div id="userDisplay">
             <div id="userName"><%=profile.name%></div> |
             <div id="userPronouns"><%= profile.pronouns %></div> |
@@ -44,4 +44,4 @@
   </div>
   
 
-<%- include('../partials/footer')%>
+<%- include('../partials/footer') %>
