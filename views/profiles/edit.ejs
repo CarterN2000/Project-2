@@ -1,0 +1,89 @@
+<%- include('../partials/header')%>
+
+
+<div class="header">
+    <div id="welcome">
+      <pre id="headerText">welcome.md       X  </pre>
+    </div>
+
+    <div id="userProfile">
+      <pre id="headerText">  Edit-Your-Profile.md   X  </pre>
+    </div>
+  </div>
+  
+  <div class="main">
+        <div id="profileGrid">
+            <div id="userContent" style="background-image: url(<%=profile.images%>); 
+                                    background-repeat: no-repeat; 
+                                    background-size: cover;">
+                <div id="userDisplay">
+                    <div id="userName"><%=profile.name%></div> |
+                    <div id="userPronouns"><%= profile.pronouns %></div> |
+                    <div id="userJob"> <%= profile.jobTitle %></div> 
+                </div>
+            </div>
+        <div id="userDetails">
+            <h1 id="editProfile">Edit Profile</h1>
+            <div id="editName">Name: <%= profile.name%></div><br>
+            <div id="editBirthday">Birthday: <%= profile.birthday.toLocaleDateString('en-US')%></div><br>
+                
+            <form action="/profiles/me?_method=PUT" method="POST" id="userForm">
+                <div>Gender: 
+                    <select name="gender">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Non-binary">Non-binary</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div><br>
+                <div id="userLoc">Located in: <input type="text" name="location" value="<%= profile.location%>"></div><br>
+                <div id="userJob">What is your current position? <input type="text" name="jobTitle" value="<%= profile.jobTitle%>"></div><br>
+                <div id="userLang">What is your favorite programming language?
+                    <select name="languages">
+                        <option value="C++">C++</option>
+                        <option value="C#">C#</option>
+                        <option value="Python">Python</option>
+                        <option value="Javascript">Javascript</option>
+                        <option value="Java">Java</option>
+                        <option value="CSS">CSS</option>
+                        <option value="HTML">HTML</option>
+                        <option value="Rust">Rust</option>
+                        <option value="PHP">PHP</option>
+                        <option value="C">C</option>
+                        <option value="Go">Go</option>
+                        <option value="Scratch">Scratch</option>
+                    </select>
+                </div><br>
+                <div  id="userDes">What are you looking for?
+                    <select name="desires">
+                        <option name="Long-Term Relationship">Long-Term Relationship</option>
+                        <option name="Short-Term Fun">Short-Term Fun</option>
+                        <option name="Open-Relationship">Open-Relationship</option>
+                        <option name="Undecided">Undecided</option>
+                    </select>
+                </div><br>
+                <div id="about">Tell us about yourself: <br>
+                    <textarea name="aboutMe" cols="30" rows="10" maxlength="500" placeholder=" max-length 500 characters" required><%= profile.aboutMe%></textarea>
+                </div><br>
+                <div id="pronouns">Pronouns:
+                    <select name="pronouns" value="<%=profile.pronouns%>">
+                        <option></option>
+                        <option name="he/him">he/him</option>
+                        <option name="she/her" selected>she/her</option>
+                        <option name="they/them">they/them</option>
+                        <option name="other">other</option>
+                        <option name="prefer not to say">prefer not to say</option>
+                    </select>
+                </div>
+                <div id="socials"> Social media for your matches!
+                    <input type="text" name="socials" value="<%= profile.socials%>" required>
+                </div><br>
+                <!-- <div> -->
+                    <button id="editBttn" type="submit" class="bttn">Update Profile</button>
+                <!-- </div> -->
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/footer')%>

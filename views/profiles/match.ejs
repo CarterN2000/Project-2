@@ -1,0 +1,43 @@
+<%- include('../partials/header')%>
+
+<div class="header contentBox">
+    <div id="welcome">
+      <pre id="headerText">welcome.md   X</pre>
+    </div>
+    <div id="userProfile">
+        <pre id="headerText">MATCHES!!!!.md X</pre>
+      </div>
+</div>
+
+<div class="main contentBox">
+    <div id="profileGrid">
+
+    <!-- <h1>MATCHES!!!!</h1> -->
+
+    <% if (matches.length > 0) { %>
+        <% matches.forEach(function(match){ %>
+
+
+            <div class="contentBox">
+                <div id="matchUsers" >
+                    <img src='<%= match.images.length > 0 ? match.images[0]?.url : "/stylesheets/defaultImage.png" %>'>
+                    <div id="matchDisplay">
+                        <a id="matchBttn" href="/profiles/match/<%= match._id %>">
+                            <%= match.name %>
+                        </a> 
+                        <div id="userPronouns"><%= match.pronouns %></div> |
+                        <div id="userJob"> <%= match.jobTitle %></div> 
+                    </div>
+                </div>
+                <!-- <a href="/profiles/match/<#= match._id %>"><#= match.name %></a>
+                <#= match.location %> -->
+            </div>
+
+        <% }) %>
+    <% } else { %>
+            <p>No matches yet!</p>
+        <% } %>
+    </div>
+</div>
+
+<%- include('../partials/footer')%>
