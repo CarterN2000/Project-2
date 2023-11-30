@@ -21,13 +21,13 @@
             </div>
         </div>
         <div id="userDetails">  
-        <h1><%=profile.name%>, <%= age %></h1>
+        <h1 id="sexyFont"><span id="oogaBoogaBoDooga"><%= profile.name%>, <span id="ooga"><%= age %></h1>
           <div id="userForm">
-                <div>Lives In: <%= profile.location %></div>
-                <div>Looking for: <%= profile.desires %></div>
-                <div>About: <%= profile.aboutMe %></div>
-                <div>Preferred Languages: <%= profile.languages %></div>
-                <div>Job Title: <%= profile.jobTitle %></div>
+                <div><span id="ooga">Lives</span> In: <span id="oogaBooga"><%= profile.location %></span></div>
+                <div><span id="ooga">Looking</span> for: <span id="oogaBooga"><%= profile.desires %></div>
+                <div>About: <span id="oogaBooga"><%= profile.aboutMe %></div>
+                <div>Favorite <span id="ooga">Language</span>: <span id="oogaBooga"><%= profile.languages %></div>
+                <div>Job Title: <span id="oogaBooga"><%= profile.jobTitle %></div>
 
                 <form action="/profiles/<%= profile._id %>?_method=PUT" method="POST">
                   <button class="bttn" type="submit">LIKE</button>
