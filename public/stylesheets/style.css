@@ -141,16 +141,18 @@ body {
     background-position: center bottom;
    }
 
- #title{
-   font-size: 45px;
-   margin-top: 10px;
-   align-self: center;
-   background-color:rgba(0, 0, 0, 0.75);
-   font-family: 'Montserrat Alternates', sans-serif;
-   border-radius: 8px;
-   box-shadow: 4px 4px 2px rgba(1, 1, 1)
-
- }
+   #title{
+    font-size: 45px;
+    top: 33vh;
+    left: 50%; /* Adjust horizontally as needed */
+    transform: translateX(-50%);
+    position: fixed;
+    align-self: center;
+    background-color:rgba(0, 0, 0, 0.75);
+    font-family: 'Montserrat Alternates', sans-serif;
+    border-radius: 8px;
+    box-shadow: 4px 4px 2px rgba(1, 1, 1)
+  }
 
  #oogaBooga {
   font-family: 'Montserrat Alternates', sans-serif;
@@ -207,15 +209,15 @@ body {
  }
 
  .bttnLog{
-  align-self: center;
-  /* margin-top:30px; */
-  padding-bottom: 5px;
-  margin-top: 220px;
-  width:12rem;
-  height:3.5rem;
+  position: fixed;
+  bottom: 9vh;
+  left: 50%; /* Adjust horizontally as needed */
+  transform: translateX(-50%);
+  width: 12rem;
+  height: 3.5rem;
   font-size: 20px;
   text-align: center;
-  background-color: #23ddc8;
+  background-color: #23DDC8;
   box-shadow: 2px 2px 1px #303232;
   border-radius: 5px;
   color: rgb(0, 0, 0);
