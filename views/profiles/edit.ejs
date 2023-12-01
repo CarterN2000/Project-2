@@ -13,14 +13,8 @@
   
   <div class="main">
         <div id="profileGrid">
-            <div id="userContent" style="background-image: url(<%=profile.images%>); 
-                                    background-repeat: no-repeat; 
-                                    background-size: cover;">
-                <div id="userDisplay">
-                    <div id="userName"><%=profile.name%></div> |
-                    <div id="userPronouns"><%= profile.pronouns %></div> |
-                    <div id="userJob"> <%= profile.jobTitle %></div> 
-                </div>
+            <div id="userContent"> 
+                <img src='<%= profile.images.length > 0 ? profile.images[0]?.url : "/stylesheets/defaultImage.png" %>'>
             </div>
         <div id="userDetails">
             <h1 id="editProfile">Edit Profile</h1>
@@ -69,7 +63,7 @@
                     <select name="pronouns" value="<%=profile.pronouns%>">
                         <option></option>
                         <option name="he/him">he/him</option>
-                        <option name="she/her" selected>she/her</option>
+                        <option name="she/her">she/her</option>
                         <option name="they/them">they/them</option>
                         <option name="other">other</option>
                         <option name="prefer not to say">prefer not to say</option>
