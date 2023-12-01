@@ -17,7 +17,7 @@ const profileSchema = new Schema ({
     },
     gender: {
         type: String,
-        enum: ['Male', 'Female', 'Non-binary', 'Other']
+        enum: ['Male', 'Female', 'Non-binary', 'Other', '']
     },
     location: String,
     jobTitle: String,

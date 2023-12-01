@@ -138,33 +138,21 @@ body {
    /* border: rgba(85, 85, 85, 1) solid 2px;  */
  }
    #mainBg {
-    background-image: url('loginBG.png');
+    background-image: url('loginBGone.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center bottom;
    }
 
-/* .imgHolder {
-  display: flex;
-  justify-content: center;
-  align-items: end;
-  border: 1px solid red;
-  height: 100px;
-  width: 200px;
-} */
-
-
-/* #backgroundImg {
-    width: 500px;
-    height: 400px;
-   } */
-
  #title{
-   font-size: 50px;
+   font-size: 45px;
+   margin-top: 10px;
    align-self: center;
-   background-color:rgba(0, 0, 0, 0.5);
+   background-color:rgba(0, 0, 0, 0.75);
    font-family: 'Montserrat Alternates', sans-serif;
+   border-radius: 8px;
+   box-shadow: 4px 4px 2px rgba(1, 1, 1)
 
  }
 
@@ -214,11 +202,13 @@ body {
  #mainContent{
    width: 50%;
    height: 100%;
-   margin: 60px 20px 20px 20px;
+   margin: 190px 20px 20px 20px;
    display: flex; 
    flex-direction: column;
-   justify-content: center;
+   justify-content: space-around;
+   align-items: baseline;
    color:rgb(255, 255, 255);
+   position: fixed;
  }
 
  #imageContainer{
@@ -232,9 +222,27 @@ body {
   width:200px;
   height:200px;
  }
+
+ .bttnLog{
+  align-self: center;
+  /* margin-top:30px; */
+  padding-bottom: 5px;
+  margin-top: 220px;
+  width:12rem;
+  height:3.5rem;
+  font-size: 20px;
+  text-align: center;
+  background-color: #23ddc8;
+  box-shadow: 2px 2px 1px #303232;
+  border-radius: 5px;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  justify-content: center;
+  border: 2px solid #000000;
+}
  
  #mainContent > button{
- background-color: rgba(29, 108, 153, 1);
+   /* background-color:#1d6c99; */
    color: white;
    font-size: 20px;
    font-weight: bold;
