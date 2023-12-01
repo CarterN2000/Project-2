@@ -1,28 +1,28 @@
 <%- include('../partials/header')%>
 
 
-<div class="header">
-    <div id="welcome">
-      <pre id="headerText">welcome.md       X  </pre>
+    <div class="header">
+        <div id="welcome">
+            <pre id="headerText">welcome.md       X  </pre>
+        </div>
+
+        <div id="userProfile">
+            <pre id="headerText">  Edit-Your-Profile.md   X  </pre>
+        </div>
     </div>
 
-    <div id="userProfile">
-      <pre id="headerText">  Edit-Your-Profile.md   X  </pre>
-    </div>
-  </div>
-  
-  <div class="main">
-        <div id="profileGrid">
-            <div id="userContent"> 
-                <img src='<%= profile.images.length > 0 ? profile.images[0]?.url : "/stylesheets/defaultImage.png" %>'>
-            </div>
+    <div class="main">
+        <div id="userContent">
+            <img src='<%= profile.images.length > 0 ? profile.images[0]?.url : "/stylesheets/defaultImage.png" %>'>
+        </div>
         <div id="userDetails">
-            <h1 id="editProfile">Edit Profile</h1>
-            <div id="editName">Name: <%= profile.name%></div><br>
-            <div id="editBirthday">Birthday: <%= profile.birthday.toLocaleDateString('en-US')%></div><br>
-                
-            <form action="/profiles/me?_method=PUT" method="POST" id="userForm">
-                <div>Gender: 
+            <h1 class="sexyFont" id="editProfile">Edit <span id="oogaBoogaBoDooga">Profile</span></h1>
+            <div id="editName">Name: <span id="oogaBooga"><%=profile.name%></span>
+            </div><br>
+            <div id="editBirthday"><span id="ooga">Birthday</span>: <%= profile.birthday.toLocaleDateString('en-US')%>
+            </div><br>
+            <form action="/profiles/me?_method=PUT" method="POST">
+                <div><span id="oogaBooga">Gender</span>:
                     <select name="gender">
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
@@ -30,9 +30,11 @@
                         <option value="other">Other</option>
                     </select>
                 </div><br>
-                <div id="userLoc">Located in: <input type="text" name="location" value="<%= profile.location%>"></div><br>
-                <div id="userJob">What is your current position? <input type="text" name="jobTitle" value="<%= profile.jobTitle%>"></div><br>
-                <div id="userLang">What is your favorite programming language?
+                <div id="userLoc"><span id="ooga">Located</span> in: <input type="text" name="location" value="<%= profile.location%>"></div>
+                <br>
+                <div id="userJob">What is <span id="oogaBooga">your</span> <span id="ooga">current(</span><span id="oogaBooga">position</span><span id="ooga">)</span>? <input type="text" name="jobTitle"
+                        value="<%= profile.jobTitle%>"></div><br>
+                <div id="userLang">What is <span id="oogaBooga">your</span> <span id="ooga">favorite</span> programming language?
                     <select name="languages">
                         <option value="C++">C++</option>
                         <option value="C#">C#</option>
@@ -48,7 +50,7 @@
                         <option value="Scratch">Scratch</option>
                     </select>
                 </div><br>
-                <div  id="userDes">What are you looking for?
+                <div id="userDes">What are <span id="oogaBooga">you</span> looking for?
                     <select name="desires">
                         <option name="Long-Term Relationship">Long-Term Relationship</option>
                         <option name="Short-Term Fun">Short-Term Fun</option>
@@ -56,10 +58,11 @@
                         <option name="Undecided">Undecided</option>
                     </select>
                 </div><br>
-                <div id="about">Tell us about yourself: <br>
-                    <textarea name="aboutMe" cols="30" rows="10" maxlength="500" placeholder=" max-length 500 characters" required><%= profile.aboutMe%></textarea>
+                <div id="about">
+                    <textarea name="aboutMe" cols="30" rows="10" maxlength="500"
+                        placeholder=" Tell me about yourself: (max-length 500 characters)" required><%= profile.aboutMe%></textarea>
                 </div><br>
-                <div id="pronouns">Pronouns:
+                <div id="pronouns"><span id="ooga">Pronouns</span>:
                     <select name="pronouns" value="<%=profile.pronouns%>">
                         <option></option>
                         <option name="he/him">he/him</option>
@@ -68,16 +71,15 @@
                         <option name="other">other</option>
                         <option name="prefer not to say">prefer not to say</option>
                     </select>
-                </div>
-                <div id="socials"> Social media for your matches!
+                </div><br>
+                <div id="socials"> Social media for <span id="oogaBooga">your</span> matches!
                     <input type="text" name="socials" value="<%= profile.socials%>" required>
                 </div><br>
                 <!-- <div> -->
-                    <button id="editBttn" type="submit" class="bttn">Update Profile</button>
+                <button id="editBttn" type="submit" class="bttn">Update Profile</button>
                 <!-- </div> -->
             </form>
         </div>
     </div>
-</div>
 
 <%- include('../partials/footer')%>

@@ -37,9 +37,9 @@ body {
   width:20rem;
   border: rgba(85, 85, 85, 1) solid;
  }
- #userCard img{
-  /* margin-left:4rem; */
- }
+ /* #userCard img{
+  margin-left:4rem;
+ } */
  #userCard div{
   margin-left:4rem;
  }
@@ -176,6 +176,10 @@ body {
  }
 
  #sexyFont {
+  font-family: 'Montserrat Alternates', sans-serif;
+ }
+ 
+ .sexyFont {
   font-family: 'Montserrat Alternates', sans-serif;
  }
 
@@ -424,7 +428,6 @@ body {
 }
 
 #socials{
-  margin-top:5rem;
   grid-row-start:5;
   grid-row-end:6;
   grid-column-end:2;
