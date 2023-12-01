@@ -14,25 +14,28 @@
     <div id="profileGrid">
         <div id="show-match-users"> 
             <img src='<%= match.images.length > 0 ? match.images[0]?.url : "/stylesheets/defaultImage.png" %>'> 
-            <div id="matchDisplay">
-                <div id="userName"><%= match.name %></div> |
-            
-                <div id="userPronouns"><%= match.pronouns %></div> |
-                <div id="userJob"> <%= match.jobTitle %></div> 
-            </div>
+
         </div>
         <div id="matchDetails">  
-            <h1>Congrats! You <span id="ooga">matched</span> with <span id="oogaBoogaBoDooga"><%= match.name%></span>!</h1>
+            <h1 id="sexyFont">Congrats! You <span id="ooga">matched</span> with <span id="oogaBoogaBoDooga"><%= match.name%></span>!</h1>
                     <!-- <div>Age: <%= age %></div><br> -->
                     <div><span id="ooga">Lives</span> In: <span id="oogaBooga"><%= match.location%></span></div><br>
                     <div><span id="ooga">Looking</span> for: <span id="oogaBooga"><%= match.desires%></span></div><br>
                     <div><span id="ooga">About</span>: <span id="oogaBooga"><%= match.aboutMe%></span></div><br>
                     <div>Preferred <span id="ooga">Languages</span>: <span id="oogaBooga"><%= match.languages%></span></div><br>
                     <div>Job <span id="ooga">Title</span>: <span id="oogaBooga"><%= match.jobTitle%></span></div><br>
-                    <div><span id="ooga">Reach</span>out to <span id="oogaBoogaBoDooga"><%= match.name%></span> <a id="oogaBooga" href="<%= match.socials%>">here!</a></div>
+                    <div><span id="ooga">Reach</span> out to <span id="oogaBoogaBoDooga"><%= match.name%></span> <a id="oogaBooga" target="_blank" href="<%= match.socials%>">here!</a></div>
         </div>
     </div>
     </div>
 </div>
 
 <%- include('../partials/footer')%>
+
+
+
+<!-- <div id="matchDisplay">
+    <div id="userName"><%= match.name %></div> |
+    <div id="userPronouns"><%= match.pronouns %></div> |
+    <div id="userJob"> <%= match.jobTitle %></div> 
+</div> -->
