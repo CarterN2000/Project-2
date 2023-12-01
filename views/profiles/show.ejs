@@ -30,7 +30,6 @@
                 <form action="/profiles/dislike/<%= profile._id %>?_method=PUT" method="POST">
                   <button id="dislikeBttn" type="submit">DISLIKE</button>
                 </form>
-                <!-- <div id="likeInfo">*If you and <#=profile.name%> like each other you can continue the conversation in a private chat room! -->
                 </div>
             </div>
         </div>
@@ -38,9 +37,3 @@
   </div>
   
 <%- include('../partials/footer')%>
-
-
-            <!-- <div id="userDisplay">
-            <div id="userName"><%=profile.name%></div> |
-            <div id="userPronouns"><%= profile.pronouns %></div> |
-            <div id="userJob"> <%= profile.jobTitle %></div> 
