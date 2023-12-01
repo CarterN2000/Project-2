@@ -25,7 +25,7 @@ A dating website built by software engineers, for software engineers.
 ## Getting Started
 To start off, create an account and customize your personal profile. Then, feel free to explore and connect with as many developers as you'd like. 
 
-To access the site, click here: (link)
+To access the site, click here: https://developing-feelings-d5735203c312.herokuapp.com/
 
 Trello Board: https://trello.com/b/Tnga23kV/developing-feelings 
 
