@@ -9,7 +9,6 @@ body {
  
  #landing{
    width: 100%; 
-   /* height:95vh;  */
    height:100%;
    display: grid; 
    gap:1.5rem;
@@ -62,13 +61,11 @@ body {
  nav h3{
   grid-column-start: 2;
    grid-column-end: 3;
-   
  }
  
  nav div{
    grid-column-start: 2;
    grid-column-end: 4;
-   
  }
  
  #navContainer{
@@ -135,7 +132,6 @@ body {
    grid-row-end:8 ;
    display: flex;
    justify-content: center;
-   /* border: rgba(85, 85, 85, 1) solid 2px;  */
  }
    #mainBg {
     background-image: url('loginBGone.png');
@@ -145,16 +141,18 @@ body {
     background-position: center bottom;
    }
 
- #title{
-   font-size: 45px;
-   margin-top: 10px;
-   align-self: center;
-   background-color:rgba(0, 0, 0, 0.75);
-   font-family: 'Montserrat Alternates', sans-serif;
-   border-radius: 8px;
-   box-shadow: 4px 4px 2px rgba(1, 1, 1)
-
- }
+   #title{
+    font-size: 45px;
+    top: 33vh;
+    left: 50%; /* Adjust horizontally as needed */
+    transform: translateX(-50%);
+    position: fixed;
+    align-self: center;
+    background-color:rgba(0, 0, 0, 0.75);
+    font-family: 'Montserrat Alternates', sans-serif;
+    border-radius: 8px;
+    box-shadow: 4px 4px 2px rgba(1, 1, 1)
+  }
 
  #oogaBooga {
   font-family: 'Montserrat Alternates', sans-serif;
@@ -186,23 +184,6 @@ body {
   text-decoration: underline;
  }
 
- /* #profileGrid{
-  border: rgba(85, 85, 85, 1) solid 2px; 
-  margin:0px;
-  width:100%;
-  height:100%;
-  grid-column-start:2; 
-  grid-column-end:10; 
-  grid-row-start:2;
-  grid-row-end:11;
-  display:grid; 
-  grid-template-columns:repeat(1, auto);
-  grid-template-rows:repeat(5, auto);
-  gap: 20px;
-  background-repeat: no-repeat; 
-  background-size: cover;
-} */
-
  #mainContent{
    width: 50%;
    height: 100%;
@@ -228,15 +209,15 @@ body {
  }
 
  .bttnLog{
-  align-self: center;
-  /* margin-top:30px; */
-  padding-bottom: 5px;
-  margin-top: 220px;
-  width:12rem;
-  height:3.5rem;
+  position: fixed;
+  bottom: 9vh;
+  left: 50%; /* Adjust horizontally as needed */
+  transform: translateX(-50%);
+  width: 12rem;
+  height: 3.5rem;
   font-size: 20px;
   text-align: center;
-  background-color: #23ddc8;
+  background-color: #23DDC8;
   box-shadow: 2px 2px 1px #303232;
   border-radius: 5px;
   color: rgb(0, 0, 0);
@@ -257,12 +238,11 @@ body {
    margin-top: 2rem;
  }
  #profileGrid{
-  /* border: rgba(85, 85, 85, 1) solid 2px;  */
   width:100%;
   height:100%; 
   display:grid;
-  grid-template-columns: repeat(5, auto);
-  grid-template-rows: repeat(4, auto);
+  grid-template-columns: repeat(4, auto);
+  grid-template-rows: repeat(5, auto);
   gap: 20px;
  }
 
@@ -273,8 +253,6 @@ body {
   grid-column-end:6;
   grid-row-start: 2; 
   grid-row-end: 9;
-  /* border: rgba(85, 85, 85, 1) solid 2px; */
-  /* border-radius: 10px; */
   display:grid;
   grid-template-columns:repeat(8, auto) ;
   grid-template-rows:repeat(5, auto);
@@ -293,13 +271,10 @@ body {
 #matchUsers{
   width:18rem;
   height: 20rem;
-  /* border: rgba(85, 85, 85, 1) solid 2px; */
   border-radius: 10px;
   display:grid;
   grid-template-columns:repeat(8, auto);
   grid-template-rows:repeat(5, auto);
-  /* background-repeat: no-repeat; 
-  background-size: cover; */
 }
 #matchUsers img{
   width:100%;
@@ -308,13 +283,11 @@ body {
   grid-column-end:8;
 }
 #matchDisplay{
-  /* margin-top:8rem; */
   width:100%;
   height:100%;
   font-size: 20px;
   display:inline;
   border-radius: 0px 0px 10px 10px;
-  /* background-color:rgba(0, 0, 0, 0.8); */
   grid-column-start:1;
   grid-column-end: 9;
   grid-row-start:5;
@@ -339,7 +312,6 @@ body {
   margin-top:4rem;
   width:14rem;
   height: 18rem;
-  /* border: rgba(85, 85, 85, 1) solid 2px; */
   border-radius: 10px;
   grid-column-start:5;
   grid-column-end:6;
@@ -377,11 +349,9 @@ body {
   display:inline;
 }
 #userDisplay{
-  /* margin-top:8rem; */
   height:4rem;
   font-size: 20px;
   border-radius: 0px 0px 10px 10px;
-  /* background-color:rgba(0, 0, 0, 0.8); */
   grid-column-start:1;
   grid-column-end: 9;
   grid-row-start:5;
@@ -600,7 +570,6 @@ align-self: center;
 
 .bttn{
   align-self: center;
-  /* margin-top:30px; */
   width:8rem;
   height:3.5rem;
   text-align: center;
@@ -642,7 +611,6 @@ align-self: center;
 
 #aboutNew{
   width: 450px;
-  /* border: 1px solid red; */
 
 }
 #newMeText {
@@ -654,56 +622,5 @@ align-self: center;
   display: flex;
   justify-content: center;
 }
-
- /************** Footer stylong below **************/
-/*  
- .foot{
-   background-color:rgba(23, 23, 23, 1);
-   grid-column-start:2; 
-   grid-column-end:8; 
-   grid-row-start:7 ;
-   grid-row-end:8 ;
-   height:98%;
-  display: grid;
-   grid-template-areas: 
-      "a1 a2 a3 a4 a5 a6"
-      "b1 b2 b3 b4 b5 b6"
-      "c1 c2 c3 c4 c5 c6";
-   
-   border: rgba(85, 85, 85, 1) solid 2px;
- }
+/************** END NEW PAGE STYLING **************/
  
- #terminalMenu{
-   display: flex; 
-   flex-direction:row;
-   justify-content: space-between;
-   background-color:rgba(23, 23, 23, 1);
-   grid-column-start:1; 
-   grid-column-end:7; 
-   grid-row-start:1 ;
-   grid-row-end:2;
- }
- 
- #firstM{
-   width: 40%;
-   display: flex; 
-   flex-direction:row;
-   justify-content: space-between;
- }
- 
- #secondM{
-   width: 30%;
-   display: flex; 
-   flex-direction:row;
-   justify-content: space-between;
- }
- 
- #firstM > h5{
-   margin: 0;
- }
- 
- #secondM > h5{
-   margin: 0;
- } */
-
- /************** end of Footer styling **************/
