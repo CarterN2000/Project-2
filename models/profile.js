@@ -17,13 +17,13 @@ const profileSchema = new Schema ({
     },
     gender: {
         type: String,
-        enum: ['Male', 'Female', 'Non-binary', 'Other']
+        enum: ['Male', 'Female', 'Non-binary', 'Other', '']
     },
     location: String,
     jobTitle: String,
     languages: {
         type: [String],
-        enum: ['C++',  'C', 'C#', 'Python', 'Javascript', 'HTML', 'CSS', 'Java', 'Ruby', 'Go', 'PHP',],
+        enum: ['C++',  'C', 'C#', 'Python', 'Javascript', 'HTML', 'CSS', 'Java', 'Ruby', 'Go', 'PHP', 'Scratch'],
     },
     desires: {
         type: String,
