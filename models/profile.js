@@ -23,7 +23,7 @@ const profileSchema = new Schema ({
     jobTitle: String,
     languages: {
         type: [String],
-        enum: ['C++',  'C', 'C#', 'Python', 'Javascript', 'HTML', 'CSS', 'Java', 'Ruby', 'Go', 'PHP',],
+        enum: ['C++',  'C', 'C#', 'Python', 'Javascript', 'HTML', 'CSS', 'Java', 'Ruby', 'Go', 'PHP', 'Scratch'],
     },
     desires: {
         type: String,
