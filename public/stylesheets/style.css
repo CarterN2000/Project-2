@@ -9,7 +9,8 @@ body {
  
  #landing{
    width: 100%; 
-   height:95vh; 
+   /* height:95vh;  */
+   height:100%;
    display: grid; 
    gap:1.5rem;
    grid-template-areas:
@@ -20,8 +21,27 @@ body {
  }
 
  .contentBox{
+  font-size:20px;
   margin: 0.5rem;
-
+ }
+ .contentBox img{
+  width:200px;
+  height:200px;
+ }
+ #userCard{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  border-radius:20px;
+  height: 20rem;
+  width:20rem;
+  border: rgba(85, 85, 85, 1) solid;
+ }
+ #userCard img{
+  /* margin-left:4rem; */
+ }
+ #userCard div{
+  margin-left:4rem;
  }
  
  nav{
@@ -82,6 +102,7 @@ body {
   justify-content: center;
   text-align: center;
   margin: 0px;
+  font-size: 12px;
 }
  
  #welcome{
@@ -94,6 +115,7 @@ body {
    justify-content: center;
    text-align: center;
    margin: 0px;
+   font-size: 12px;
  }
  
  #headerText{
@@ -115,7 +137,7 @@ body {
    grid-row-end:8 ;
    display: flex;
    justify-content: center;
-   border: rgba(85, 85, 85, 1) solid 2px; 
+   /* border: rgba(85, 85, 85, 1) solid 2px;  */
  }
    #mainBg {
     background-image: url('loginBG.png');
@@ -174,7 +196,8 @@ body {
   text-decoration: underline;
  }
 
- #profileGrid{
+ /* #profileGrid{
+  border: rgba(85, 85, 85, 1) solid 2px; 
   margin:0px;
   width:100%;
   height:100%;
@@ -182,14 +205,13 @@ body {
   grid-column-end:10; 
   grid-row-start:2;
   grid-row-end:11;
-  
   display:grid; 
-  grid-template-rows:repeat(4, auto);
-  grid-template-columns:repeat(10, auto);
+  grid-template-columns:repeat(1, auto);
+  grid-template-rows:repeat(5, auto);
   gap: 20px;
   background-repeat: no-repeat; 
   background-size: cover;
-}
+} */
 
  #mainContent{
    width: 50%;
@@ -225,12 +247,13 @@ body {
    margin-top: 2rem;
  }
  #profileGrid{
-width:100%;
-height:100%; 
-display:grid;
-grid-template-columns: repeat(12, auto);
-grid-template-rows: repeat(10, auto);
-gap: 20px;
+  /* border: rgba(85, 85, 85, 1) solid 2px;  */
+  width:100%;
+  height:100%; 
+  display:grid;
+  grid-template-columns: repeat(5, auto);
+  grid-template-rows: repeat(4, auto);
+  gap: 20px;
  }
 
  #userContent{
@@ -240,34 +263,48 @@ gap: 20px;
   grid-column-end:6;
   grid-row-start: 2; 
   grid-row-end: 9;
-  border: rgba(85, 85, 85, 1) solid 2px;
-  border-radius: 10px;
+  /* border: rgba(85, 85, 85, 1) solid 2px; */
+  /* border-radius: 10px; */
   display:grid;
   grid-template-columns:repeat(8, auto) ;
   grid-template-rows:repeat(5, auto);
   background-repeat: no-repeat; 
   background-size: cover;
+}
+#userContent img{
+  grid-column-start:5;
+  grid-column-end: 6;
+  grid-row-start:4;
+  grid-row-end: 5;
+  width:90%;
+  height: 90%;
 }
 
 #matchUsers{
-  width:14rem;
-  height: 18rem;
-  border: rgba(85, 85, 85, 1) solid 2px;
+  width:18rem;
+  height: 20rem;
+  /* border: rgba(85, 85, 85, 1) solid 2px; */
   border-radius: 10px;
   display:grid;
-  grid-template-columns:repeat(8, auto) ;
+  grid-template-columns:repeat(8, auto);
   grid-template-rows:repeat(5, auto);
-  background-repeat: no-repeat; 
-  background-size: cover;
+  /* background-repeat: no-repeat; 
+  background-size: cover; */
+}
+#matchUsers img{
+  width:100%;
+  height:100%;
+  grid-column-start:2;
+  grid-column-end:8;
 }
 #matchDisplay{
-  margin-top:14rem;
+  /* margin-top:8rem; */
   width:100%;
-  height:4rem;
-  font-size: 14px;
+  height:100%;
+  font-size: 20px;
   display:inline;
   border-radius: 0px 0px 10px 10px;
-  background-color:rgba(0, 0, 0, 0.8);
+  /* background-color:rgba(0, 0, 0, 0.8); */
   grid-column-start:1;
   grid-column-end: 9;
   grid-row-start:5;
@@ -292,13 +329,19 @@ gap: 20px;
   margin-top:4rem;
   width:14rem;
   height: 18rem;
-  border: rgba(85, 85, 85, 1) solid 2px;
+  /* border: rgba(85, 85, 85, 1) solid 2px; */
   border-radius: 10px;
   grid-column-start:5;
   grid-column-end:6;
   display:grid;
   grid-template-columns:repeat(8, auto) ;
   grid-template-rows:repeat(5, auto);
+}
+#show-match-users img{
+  grid-column-start:4;
+  grid-column-end: 8;
+  width:100%; 
+  height: 100%;
 }
 
 #uploadImg{
@@ -324,12 +367,11 @@ gap: 20px;
   display:inline;
 }
 #userDisplay{
-  margin-top:31rem;
+  /* margin-top:8rem; */
   height:4rem;
   font-size: 20px;
-  display:inline;
   border-radius: 0px 0px 10px 10px;
-  background-color:rgba(0, 0, 0, 0.8);
+  /* background-color:rgba(0, 0, 0, 0.8); */
   grid-column-start:1;
   grid-column-end: 9;
   grid-row-start:5;
@@ -344,7 +386,7 @@ gap: 20px;
   flex-direction: column;
   margin:0px;
   width: 30rem;
-  height:100%;
+  height:70%;
   grid-column-start:7;
   grid-column-end:12;
   grid-row-start: 2; 
@@ -364,12 +406,13 @@ gap: 20px;
 }
 #userForm{
   margin:0px;
-  height:100%;
+  height: 50%;
   width:100%;
   display: grid;
   grid-template-columns:2;
   grid-template-rows:6;
   grid-gap: 10px;  
+
 }
 
 #socials{
@@ -477,6 +520,19 @@ align-self: center;
   grid-column-end: 2;
   grid-row-start:7;
   grid-row-end:8;
+}
+
+#indexBttn{
+  margin-top:10px;
+  display:block;
+  width:80%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background-color:rgba(29, 108, 153, 1);  
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
 }
 
 #matchBttn{

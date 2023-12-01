@@ -2,7 +2,7 @@
 
 <div class="header">
     <div id="welcome">
-      <pre id="headerText">welcome.md       X  </pre>
+      <pre id="headerText">  welcome.md   X  </pre>
     </div>
     
     <div id="userProfile">
@@ -13,12 +13,8 @@
   <div class="main">
     <div id="profileGrid">
         <div id="userContent"> 
-        <img src='<%= profile.images.length > 0 ? profile.images[0]?.url : "/stylesheets/defaultImage.png" %>'>
-            <div id="userDisplay">
-            <div id="userName"><%=profile.name%></div> |
-            <div id="userPronouns"><%= profile.pronouns %></div> |
-            <div id="userJob"> <%= profile.jobTitle %></div> 
-            </div>
+            <img src='<%= profile.images.length > 0 ? profile.images[0]?.url : "/stylesheets/defaultImage.png" %>'>
+
         </div>
         <div id="userDetails">  
           <h1 id="sexyFont">Nice profile, <span id="oogaBoogaBoDooga"><%= profile.name %></span>!</h1>
@@ -44,4 +40,10 @@
   </div>
   
 
-<%- include('../partials/footer')%>
+<%- include('../partials/footer') %>
+
+<!-- <div id="userDisplay">
+  <div id="userName"><%=profile.name%></div> |
+  <div id="userPronouns"><%= profile.pronouns %></div> |
+  <div id="userJob"> <%= profile.jobTitle %></div> 
+</div> -->
