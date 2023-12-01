@@ -11,18 +11,13 @@
 
 <div class="main contentBox">
     <div id="profileGrid">
-
-
         <%profile.forEach(function(p){%>
-        
                 <div id="userCard" class="contentBox">
                     <div><img src="<%= p.images.length > 0 ? p.images[0]?.url : "/stylesheets/defaultImage.png" %>"></div>
                     <div><a id="indexBttn" href="/profiles/<%= p._id %>"><%= p.name%></a></div>
 
                     <div id="indexloc"><%= p.location %></div>
                 </div>
-        
-        
         <%})%>
     </div>
 </div>
